@@ -1,0 +1,34 @@
+<ion-view id="bar" title='<img class="title-image" src="img/FontLogo_Light.png" />'>
+    <ion-content>
+        <ion-scroll id="bar-container" direction="y">
+
+            <h2 id="bar-name-label">{{bar.name}}</h2>
+            <img src="img/bar-icon.png" id="bar-icon"/>
+            <div id="bar-address-label">
+                <p>42, le nom de la rue</p>
+                <p>59000 Lille</p>
+            </div>
+            <p id="bar-description-label">{{bar.description}}</p>
+            <p id="bar-finishedHunts-label" ng-show="finishedHunts[0]!=null">Chasses terminées</p>
+            <hr id="bar-separator" ng-show="finishedHunts[0]!=null">
+            <ul id="bar-finishedHunts-list" ng-show="finishedHunts[0]!=null">
+                <li >
+                    <ion-item id="bar-item" ng-repeat="hunt in finishedHunts" ng-click="goToHunt({{hunt[0]}})" >
+                        {{hunt[1]}}<p id="bar-item-hunter"> chassée par {{hunt[2]}}</p>
+                    </ion-item>
+                </li>
+            </ul>
+            <p id="bar-pendingHunts-label" ng-show="pendingHunts[0]!=null">Chasses en cours</p>
+            <hr id="bar-separator" ng-show="pendingHunts[0]!=null">
+            <ul id="bar-pendingHunts-list" ng-show="pendingHunts[0]!=null">
+                <li >
+                    <ion-item id="bar-item" ng-repeat="hunt in pendingHunts" ng-click="goToHunt({{hunt[0]}})" >
+                        {{hunt[1]}}<p id="bar-item-hunter"> chassée par {{hunt[2]}}</p>
+                    </ion-item>
+                </li>
+            </ul>
+
+
+        </ion-scroll>
+    </ion-content>
+</ion-view>

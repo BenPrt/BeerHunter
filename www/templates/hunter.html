@@ -1,0 +1,21 @@
+<ion-view id="hunter" title='<img class="title-image" src="img/FontLogo_Light.png" />'>
+    <ion-content>
+        <div id="hunter-container">
+            <img src="img/user-icon.png" id="hunter-icon"/>
+            <span id="hunter-edit-icon" class="glyphicon glyphicon-pencil" ng-click="goToEdit()"></span>
+            <div id="hunter-rightDiv">
+                <h2 id="hunter-name-label"> {{hunter.username}}</h2>
+                <h3 id="hunter-score-label"> Score : {{hunter.validScore}}</h3>
+                <h3 id="hunter-level-label"> Lvl : {{level}}</h3>
+            </div>
+            <h3 id="hunter-hunts-label"> {{hunter.hunts.length}} chasses à son actif</h3>
+            <p id="hunter-informations-label"> Informations et statistiques de ce chasseur</p>
+            <hr id="hunter-separator">
+            <p id="hunter-biography" ng-show="hunter.biography">Description : {{hunter.biography}}</p>
+            <p id="hunter-age" ng-show="hunter.dateOfBirth">Age : {{$scope.calculateAge(hunter.dateOfBirth)}}</p>
+            <p id="hunter-inscription-label" >Inscrit depuis le {{hunter.createdAt | date:'dd/MM/yyyy'}}</p>
+            <p id="hunter-potential-label"> Potentiel : {{hunter.potentialScore-hunter.validScore}}</p>
+            <p id="hunter-trophy-label"> Trophées : {{hunter.trophyHunter.length}}</p>
+        </div>
+    </ion-content>
+</ion-view>

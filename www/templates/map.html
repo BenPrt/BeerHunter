@@ -1,0 +1,83 @@
+<ion-view id="mapTemplate" title='<img class="title-image" src="img/FontLogo_Light.png" />'>
+    <ion-content>
+        <div id="map-filter-container">
+            <div id="map-overlay" class="beerOverlay" ng-show="beerAutocomplete" ng-click="displayBeerAutocomplete()"></div>
+            <ion-md-input id="map-beer-field" placeholder="Sélectionnez une bière..." highlight-color="stable" type="text" ng-model="beerTyped" ng-click="displayBeerAutocomplete()" ng-change="updateListBeer(beerTyped)" ng-hide="beerSelected"></ion-md-input>
+            <p id="map-beer-label" ng-show="beerSelected" >{{beerSelected}}  <span id="map-beer-reset" class="glyphicon glyphicon-remove-sign" ng-show="beerSelected" ng-click="resetBeerField()"></span></p>
+
+            <ion-scroll id="map-beerAutocomplete" direction="y" ng-show="beerAutocomplete==true">
+                <ul>
+                    <li >
+                        <ion-item id="map-beer-item" ng-repeat="beer in displayedBeers" ng-click="selectBeer(beer.name)">
+                            {{beer.name}}
+                        </ion-item>
+                    </li>
+                </ul>
+            </ion-scroll>
+
+
+
+            <label id="map-color-filter" class="item item-input item-select" ng-hide="beerSelected">
+                <div id="map-color-filter-label">
+                    Robe de la bière
+                </div>
+                <select id="map-color-filter-select" ng-model="colorClicked" ng-change="setColor(colorClicked)">
+                    <option value="" selected>Indifférent</option>
+                    <option ng-repeat="color in colors">{{color.name}}</option>
+                </select>
+            </label>
+
+            <label id="map-origin-filter" class="item item-input item-select" ng-hide="beerSelected">
+                <div id="map-origin-filter-label">
+                    Origine de la bière
+                </div>
+                <select id="map-origin-filter-select" ng-model="originClicked" ng-change="setOrigin(originClicked)">
+                    <option value="" selected>Indifférent</option>
+                    <option ng-repeat="origin in origins">{{origin.name}}</option>
+                </select>
+            </label>
+
+            <label id="map-degree-filter" class="item item-input item-select"  ng-hide="beerSelected">
+                <div id="map-degree-filter-label">
+                    Force de la bière
+                </div>
+                <select id="map-degree-filter-select" ng-model="degreeClicked" ng-change="setDegree(degreeClicked)">
+                    <option value=""  selected>Indifférent</option>
+                    <option>Légère (<5°)</option>
+                    <option>Moyenne (5-8°)</option>
+                    <option>Forte (>8°)</option>
+                </select>
+            </label>
+
+
+            <!--
+Champ pression, pour plus tard
+<ion-toggle id="map-pressure-filter" ng-model="pressureClicked" toggle-class="toggle-assertive">Servie à la pression</ion-toggle>
+-->
+
+            <label id="map-price-filter" class="item item-input item-select">
+                <div class="map-price-filter-label">
+                    Tranche de prix
+                </div>
+                <select id="map-price-filter-select" ng-model="priceClicked" ng-change="setPrice(priceClicked)">
+                    <option value="" selected>Indifférent</option>
+                    <option>Moins de 3€</option>
+                    <option>3€ à 5€</option>
+                    <option>Plus de 5€</option>
+                </select>
+            </label>
+
+
+        </div>
+        <div id="map-mapContainer" data-tap-disabled="true">
+            <app-map style="height:400px;margin:12px;box-shadow:0 3px 25px black;"
+                     center="basel"
+                     zoom="15"
+                     markers="whoiswhere"
+                     > 
+            </app-map>
+
+            <!--            <div id="map"></div>-->
+        </div>
+    </ion-content>
+</ion-view>

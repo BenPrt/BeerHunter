@@ -1,0 +1,47 @@
+<ion-view id="hunt" title='<img class="title-image" src="img/FontLogo_Light.png" />'>
+    <ion-content>
+        <div id="hunt-fields">
+            <div id="hunt-errorMessage-container">
+                <div id="hunt-infoMessage">{{infoMessage}}</div>
+                <div id="hunt-errorMessage">{{errorMessage}}</div>
+            </div>
+
+            <div class="beerOverlay" ng-show="beerAutocomplete" ng-click="displayBeerAutocomplete()"></div>
+            <ion-md-input id="hunt-beer-field" placeholder="Sélectionnez une bière..." highlight-color="stable" type="text" ng-model="beerTyped" ng-click="displayBeerAutocomplete()" ng-change="updateListBeer(beerTyped)" ng-hide="beerSelected"></ion-md-input>
+            <p id="hunt-beer-label" ng-show="beerSelected" >{{beerSelected}}  <span id="hunt-beer-reset" class="glyphicon glyphicon-remove-sign" ng-show="beerSelected" ng-click="resetBeerField()"></span></p>
+
+            <ion-scroll id="beerAutocomplete" direction="y" ng-show="beerAutocomplete==true">
+                <ul>
+                    <li >
+                        <ion-item id="hunt-beer-item" ng-repeat="beer in displayedBeers" ng-click="selectBeer(beer)">
+                            {{beer}}
+                        </ion-item>
+                    </li>
+                </ul>
+            </ion-scroll>
+
+
+            <div class="barOverlay" ng-show="barAutocomplete" ng-click="displayBarAutocomplete()"></div>
+            <ion-md-input id="hunt-bar-field" placeholder="Sélectionnez un bar..." highlight-color="stable" type="text" ng-model="barTyped" ng-click="displayBarAutocomplete()" ng-change="updateListBar(barTyped)" ng-hide="barSelected"></ion-md-input>
+            <p id="hunt-bar-label" ng-show="barSelected">{{barSelected}} <span id="hunt-bar-reset"class="glyphicon glyphicon-remove-sign" ng-show="barSelected" ng-click="resetBarField()"></span></p>
+
+            <ion-scroll id="barAutocomplete" direction="y" ng-show="barAutocomplete==true">
+                <ul>
+                    <li >
+                        <ion-item id="hunt-bar-item" ng-repeat="bar in displayedBars" ng-click="selectBar(bar)">
+                            {{bar}}
+                        </ion-item>
+                    </li>
+                </ul>
+            </ion-scroll>
+
+            <ion-toggle id="hunt-pressure-selector" ng-model="pressureBeer" toggle-class="toggle-assertive">Servie à la pression</ion-toggle>
+
+            <ion-md-input id="hunt-price-field" placeholder="A quel prix?" highlight-color="assertive" type="text" ng-model="price"></ion-md-input>
+
+
+        </div>
+
+        <div id="hunt-submit-button" ng-click="hunt(pressureBeer, beerSelected, beers, barSelected, price)">Valider</div>
+    </ion-content>
+</ion-view>

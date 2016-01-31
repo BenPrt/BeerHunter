@@ -1,4 +1,4 @@
-var app = angular.module('BeerClient.controllers', []);
+var app = angular.module('BeerClient.controllers',[]);
 
 /**
  * A google map / GPS controller.

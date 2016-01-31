@@ -1,0 +1,16 @@
+<ion-view id="editProfile" title='<img class="title-image" src="img/FontLogo_Light.png" />'>
+    <ion-content>
+        <div id="editProfile-container">
+            <div id="editProfile-errorMessage-container">
+                <div id="editProfile-infoMessage">{{infoMessage}}</div>
+                <div id="editProfile-errorMessage">{{errorMessage}}</div>
+            </div>
+            <ion-md-input id="editProfile-description-field" placeholder="Présentez-vous rapidement..." highlight-color="assertive" type="text" ng-model="data.description"></ion-md-input>
+            <ion-md-input id="editProfile-dateOfBirth-field" placeholder="Votre date de naissance..." highlight-color="assertive" type="date" ng-model="data.dateOfBirth"></ion-md-input>
+            <ion-md-input id="editProfile-oldPass-field" placeholder="Votre ancien mot de passe..." highlight-color="assertive" type="password" ng-model="data.oldPass"></ion-md-input>            
+            <ion-md-input id="editProfile-newPass-field" placeholder="Votre nouveau mot de passe..." highlight-color="assertive" type="password" ng-model="data.newPass"></ion-md-input>
+            <ion-md-input id="editProfile-confirm-field" placeholder="Confirmez ce dernier..." highlight-color="assertive" type="password" ng-model="data.confirm"></ion-md-input>
+        </div>
+        <div id="editProfile-submit-button" ng-click="edit(data)">Valider</div>
+    </ion-content>
+</ion-view>

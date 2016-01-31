@@ -53,18 +53,13 @@ app.directive("appMap", function ($window) {
 
             function createMap() {
                 console.log("map: create map start");
+                var myLatlng = new google.maps.LatLng(50.634922, 3.063646);
                 var mapOptions = {
-                    zoom: 13,
-                    center: new google.maps.LatLng(47.55, 7.59),
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    panControl: true,
-                    zoomControl: true,
-                    mapTypeControl: true,
-                    scaleControl: false,
+                    center: myLatlng,
+                    zoom: 14,
                     streetViewControl: false,
-                    navigationControl: true,
-                    disableDefaultUI: true,
-                    overviewMapControl: true
+                    mapTypeControl : false,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
                 };
                 if (!(map instanceof google.maps.Map)) {
                     console.log("map: create map now as not already available ");

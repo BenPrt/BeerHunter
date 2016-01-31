@@ -1,25 +1,14 @@
-<ion-modal-view>
-  <ion-header-bar>
-    <h1 class="title">Login</h1>
-    <div class="buttons">
-      <button class="button button-clear" ng-click="closeLogin()">Close</button>
-    </div>
-  </ion-header-bar>
-  <ion-content>
-    <form ng-submit="doLogin()">
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model="loginData.username">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
-        </label>
-        <label class="item">
-          <button class="button button-block button-positive" type="submit">Log in</button>
-        </label>
-      </div>
-    </form>
-  </ion-content>
-</ion-modal-view>
+<ion-view id="login" name="login-view">
+    <ion-content class="padding">
+        <img class="full-logo" src="img/FullLogo.png" />
+        <div id="login-fields">
+            <ion-md-input id="login-username-field" placeholder="Nom d'utilisateur" highlight-color="assertive" type="text" ng-model="data.username"></ion-md-input>
+            <ion-md-input id="login-pass-field" placeholder="Mot de Passe" highlight-color="assertive" type="password" ng-model="data.password"></ion-md-input>
+            <div class="login-free-space"><p>blabla</p></div>
+        </div>
+        <div id="buttons-nav-bar">
+            <div id="SigninButton" ng-click="goToSignin()">Inscription</div>
+            <div id="LoginButton" ng-click="login(data)">Connexion</div>
+        </div>
+    </ion-content>
+</ion-view>

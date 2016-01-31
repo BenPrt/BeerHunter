@@ -1,36 +1,43 @@
-<ion-side-menus enable-menu-with-back-views="false">
-  <ion-side-menu-content>
-    <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-hunter">
 
-      <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
-        </button>
-      </ion-nav-buttons>
-    </ion-nav-bar>
-    <ion-nav-view name="menuContent"></ion-nav-view>
-  </ion-side-menu-content>
+            <ion-nav-buttons class="burgerIcon" side="left">
+                <button id="burgerIcon" class="button button-icon button-clear ion-navicon" menu-toggle="left">
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view id="menuContent" name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
 
-  <ion-side-menu side="left">
-    <ion-header-bar class="bar-stable">
-      <h1 class="title">Left</h1>
-    </ion-header-bar>
-    <ion-content>
-      <ion-list>
-        <ion-item menu-close ng-click="login()">
-          Login
-        </ion-item>
-        <ion-item menu-close href="#/app/search">
-          Search
-        </ion-item>
-        <ion-item menu-close href="#/app/browse">
-          Browse
-        </ion-item>
-        <ion-item menu-close href="#/app/playlists">
-          Playlists
-        </ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-side-menu>
+    <ion-side-menu side="left">
+        <ion-header-bar class="bar-hunter2">
+            <h1 id="sideMenuTitle" class="title">Que souhaitez-vous faire?</h1>
+        </ion-header-bar>
+        <ion-content class="sideMenuContent">
+            <ion-list class="sideMenuList">
+                <ion-item menu-close ng-click="goToHunt()">
+                    Chasser
+                </ion-item>
+                <ion-item menu-close ng-click="goToMap()">
+                    Voir la carte
+                </ion-item>
+                <ion-item menu-close ng-click="goToSearch()">
+                    Rechercher
+                </ion-item>
+                <ion-item menu-close href="">
+                    Vérifier une chasse
+                </ion-item>
+                <ion-item menu-close href="">
+                    Trophées et classement
+                </ion-item>
+                <ion-item menu-close ng-click="goToProfile()">
+                    Mon Profil
+                </ion-item>
+                <ion-item menu-close ng-click="logout()">
+                    Déconnexion
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
 </ion-side-menus>

@@ -1,0 +1,18 @@
+<ion-view id="signin" name='signin-view'>
+    <ion-content class="padding">
+        <img id="signin-back-button" src="img/back-button.png" ng-click="goBack()" />
+        <img id="signin-logo" src="img/FontLogo_Light.png" />
+        <div id="signin-fields">
+            <div id="signin-errorMessage-container">
+                <div id="signin-infoMessage">{{infoMessage}}</div>
+                <div id="signin-errorMessage">{{errorMessage}}</div>
+            </div>
+            <ion-md-input id="signin-username-field" placeholder="Nom d'Utilisateur" highlight-color="assertive" type="text" ng-model="data.userName"></ion-md-input>
+            <ion-md-input id="signin-mail-field" placeholder="E-mail" highlight-color="assertive" type="text" ng-model="data.mail"></ion-md-input>
+            <ion-md-input id="signin-pass-field" placeholder="Mot de Passe" highlight-color="assertive" type="password" ng-model="data.pass"></ion-md-input>
+            <ion-md-input id="signin-confirm-field" placeholder="Confirmez le mot de passe" highlight-color="assertive" type="password" ng-model="data.confirm"></ion-md-input>
+            <div class="signin-free-space"><p>blabla</p></div>
+        </div>
+        <div id="signin-submit-button" ng-click="signin(data)">Valider</div>
+    </ion-content>
+</ion-view>
