@@ -1,1 +1,860 @@
 /* Empty. Add your own CSS if you like */
+
+map {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.scroll {
+  height: 100%;
+}
+
+
+/* Empty. Add your own CSS if you like */
+#mapTemplate,#hunt,#login,#signin,#menuContent,#search,#beer,#bar,#hunter,#consultHunt,#editProfile{
+    color:black;
+    background-color:white;
+    background-image:url(../img/background.jpg);
+}
+
+/* Style global de l'app*/
+ul
+{
+    list-style-type: none;
+}
+.padding{
+    padding: 0;
+}
+.title-image{
+    width :80%;
+    padding-left: 7%;
+}
+.bar-hunter{
+    background : #bc8b49;
+    height : 60px;
+}
+.bar-hunter2{
+    background : #bc7a3f;
+    height : 60px;
+}
+#sideMenuTitle{
+    padding-top : 8px;
+    padding-left : 13px;
+}
+.sideMenuContent{
+    padding-top : 17px;
+    background-color : #d2a959;
+}
+.item-complex .item-content, .item{
+    background-color : #d2a959;
+}
+#burgerIcon{
+    padding-top : 8px; 
+}
+.bar .title{
+    height : 60px;
+}
+
+
+
+/*Style de la page de login*/
+.full-logo{
+    width : 85%;
+    height : auto;
+    padding-top : 18%;
+    padding-left: 15.5%;
+}
+#login-fields{
+    margin-left : 8%;
+    width : 84%;
+    background-color : #DBBC8A;
+    opacity : 0.9;
+    margin-top : 4.8%;
+}
+#login-username-field{
+    padding-top: 13%;
+    margin-left : 4%;
+    width :92%;
+    border : none;
+    color : white;
+}
+#login-pass-field{
+    margin-left : 4%;
+    margin-top : 5%;
+    width :92%;
+    border : none;
+}
+.login-free-space{
+    margin-top : 1%;
+}
+.login-free-space p{
+    visibility : hidden;
+}
+#buttons-nav-bar{
+    margin-top : 11%;
+    height : 35%;
+    width : 100%;
+    background-color : white;
+}
+#SigninButton{
+    width : 50%;
+    float:left;
+    background-color : #bc7a3f;
+    color : black;
+    text-align : center;
+    font-size : 28px;
+    padding-top : 8%;
+    padding-bottom : 8%;
+}
+#LoginButton{
+    margin-left : 49.5%;
+    width:51%;
+    background-color : #bc8b49;
+    margin-top : 1%;
+    color : black;
+    font-size: 28px;
+    text-align : center;
+    padding-top : 8%;
+    padding-bottom : 8%;
+}
+
+
+
+/*Style de la page d'inscription*/
+#signin-back-button{
+    float:left;
+    width : 15%;
+    height : 10%;
+    padding-left : 5%;
+    padding-top : 6%;
+}
+#signin-navbar{
+    background : none;
+}
+#signin-logo{
+    padding-left : 5%;
+    width : 80%;
+    height : auto;
+    padding-bottom :4%;
+}
+#signin-fields{
+    margin-top : 4%;
+    padding-top : 3%;
+    margin-left : 5%;
+    width : 90%;
+    background-color : #DBBC8A;
+}
+#signin-errorMessage-container{
+    margin-left : 7%;
+    margin-right : 7%;
+    text-align : center;
+}
+#signin-infoMessage{
+    color : dimgrey;
+}
+#signin-errorMessage{
+    color : darkred;
+}
+#signin-username-field{
+    margin-left : 4%;
+    margin-top : 4%;
+    width :92%;
+    border : none;
+}
+#signin-mail-field{
+    margin-left : 4%;
+    margin-top : 5%;
+    width :92%;
+    border : none;
+}
+#signin-pass-field{
+    margin-left : 4%;
+    margin-top : 5%;
+    width :92%;
+    border : none;
+}
+#signin-confirm-field{
+    margin-left : 4%;
+    margin-top : 5%;
+    margin-bottom : 5%;
+    width :92%;
+    border : none;
+}
+.signin-free-space{
+    margin-top : 1%;
+}
+.signin-free-space p{
+    visibility : hidden;
+}
+#signin-submit-button{
+    margin-top : 15%;
+    background-color : #bc7a3f;
+    height : 35%;
+    text-align : center;
+    width : 100%;
+    color : black;
+    font-size: 28px;
+    padding-top : 8%;
+    padding-bottom : 8%;
+}
+
+
+
+
+/*Style de la page de chasse*/
+#hunt-fields{
+    margin-top : 14.8%;
+    padding-top : 6%;
+    padding-bottom: 5%;
+    margin-left : 3.5%;
+    width : 93%;
+    background-color : #DBBC8A;
+}
+#hunt-errorMessage-container{
+    margin-left : 7%;
+    margin-right : 7%;
+    text-align : center;
+}
+#hunt-infoMessage{
+    color : dimgrey;
+}
+#hunt-errorMessage{
+    color : darkred;
+}
+.beerOverlay{
+    width :100%;
+    height : 118.3%;
+    opacity : 0.4;
+    position : absolute;
+    top : -8%;
+    left : 0;
+    background-color : black;
+    z-index: 5;
+}
+#hunt-beer-field{
+    width : 90%;
+    margin-top : 6%;
+    margin-left : 5%;
+    border : none;
+    z-index : 10;
+}
+#hunt-beer-label{
+    font-size : 23px;
+    padding-top : 14.5%;
+    padding-left : 12%;
+}
+#hunt-beer-reset{
+    float : right;
+    padding-right : 14%;
+    color : darkred;
+    font-size : 23px;
+}
+#beerAutocomplete{
+    width : 82%;
+    height : 46%;
+    margin-top : 0.5%;
+    margin-left : 4.9%;
+    position : absolute;
+    z-index : 15;
+}
+#hunt-beer-item{
+    font-size : 15px;
+}
+
+.barOverlay{
+    width :100%;
+    height : 118.3%;
+    opacity : 0.4;
+    position : absolute;
+    top : -8%;
+    left : 0;
+    background-color : black;
+    z-index: 5;
+}
+#hunt-bar-field{
+    width : 90%;
+    margin-top : 6%;
+    margin-left : 5%;
+    border : none;
+    z-index : 11;
+}
+#hunt-bar-label{
+    font-size : 22px;
+    padding-top : 13%;
+    padding-left : 12%;
+}
+#hunt-bar-reset{
+    float : right;
+    padding-right : 14%;
+    color : darkred;
+    font-size : 23px;
+}
+#barAutocomplete{
+    width : 82%;
+    height : 46%;
+    margin-top : 0.5%;
+    margin-left : 4.9%;
+    position : absolute;
+    z-index : 12;
+}
+#hunt-bar-item{
+    font-size : 15px;
+}
+#hunt-pressure-selector{
+    background-color: #DBBC8A;
+    border : none;
+    width : 89%;
+    margin-top : 13%;
+    margin-left : 5.5%;
+    font-weight: bold;
+}
+#hunt-price-field{
+    width : 45%;
+    margin-top : 2%;
+    margin-bottom : 5%;
+    margin-left : 7%;
+    border : none;
+}
+.hunt-free-space{
+    margin-top : 2%;
+}
+.hunt-free-space p{
+    visibility : hidden;
+}
+#hunt-submit-button{
+    float:left;
+    background-color : #bc7a3f;
+    margin-top : 11%;
+    text-align : center;
+    width : 100%;
+    color : black;
+    font-size: 28px;
+    padding-top : 8%;
+    padding-bottom : 8%;
+}
+
+
+
+/* Style de la page d'accueil/de la carte */
+#map-filter-container{
+    margin-top : 7.5%;
+    margin-left : 3.5%;
+    padding-top : 1.5%;
+    width : 93%;
+    background-color : #DBBC8A;
+    padding-bottom : 2%;
+}
+#map-overlay{
+    width :100%;
+    height : 270%;
+    opacity : 0.4;
+    position : absolute;
+    top : -8%;
+    left : 0;
+    background-color : black;
+    z-index: 5;
+}
+#map-beer-field{
+    width : 90%;
+    margin-top : 0%;
+    margin-left : 5%;
+    border : none;
+    z-index : 11;
+}
+#map-beer-label{
+    font-size : 28px;
+    padding-top : 21%;
+    padding-bottom: 20%;
+    padding-left : 15%;
+}
+#map-beer-reset{
+    float : right;
+    padding-right : 14%;
+    color : darkred;
+    font-size : 23px;
+}
+#map-beerAutocomplete{
+    width : 82%;
+    height : 100%;
+    margin-top : 0.5%;
+    margin-left : 4.9%;
+    position : absolute;
+    z-index : 15;
+}
+#map-beer-item{
+    font-size : 15px;
+}
+
+#map-color-filter{
+    margin-top : 3%;
+    background-color: #DBBC8A;
+    border : none;
+    width : 99%;
+    margin-left : 0.5%;
+}
+#map-color-filter-label{
+
+}
+#map-color-filter-select{
+    width : 50%;
+    background-color: #D1B17D;
+}
+#map-origin-filter{
+    margin-top : 2%; 
+    border:none;
+    background-color: #DBBC8A;
+    border : none;
+    width : 99%;
+    margin-left : 0.5%;
+}
+#map-origin-filter-label{
+
+}
+#map-origin-filter-select{
+    width : 50%;
+    background-color: #D1B17D;
+}
+#map-degree-filter{
+    margin-top : 2%; 
+    border:none;
+    background-color: #DBBC8A;
+    border : none;
+    width : 99%;
+    margin-left : 0.5%;
+}
+#map-degree-filter-label{
+    background-color: #DBBC8A;
+}
+#map-degree-filter-select{
+    width : 53%;
+    background-color: #D1B17D;
+}
+#map-price-filter{
+    margin-top : 2%; 
+    border:none;
+    background-color: #DBBC8A;
+    border : none;
+    width : 99%;
+    margin-left : 0.5%;
+}
+#map-price-filter-label{
+    background-color: #DBBC8A;
+}
+#map-price-filter-select{
+    width : 50%;
+    background-color: #D1B17D;
+}
+#map-mapContainer{
+    position : absolute;
+    margin-top : 3%;
+    height : 315px;
+    width : 95%;
+    margin-left : 2.5%;
+    z-index : 10;
+}
+
+.scroll{100%;}
+
+
+#map{
+    height:55%;
+    width : 97%;
+}
+
+
+
+
+
+/* Style de la page de recherche */
+#search-container{
+    margin-left : 3.5%;
+    background-color : #BA965B;
+    padding-right : 5%;
+    margin-bottom : 5%;
+    width : 93%;
+    height : 550px;
+}
+.tab-nav{
+    float:right;
+    margin-top : -12%;
+    width : 93%;
+}
+#search-tabs{
+
+}
+#search-beer-tab{
+
+}
+#search-bar-tab{
+
+}
+#search-hunter-tab{
+
+}
+#search-query-field{
+    margin-top : 9%;
+    margin-left : 3%;
+    padding-top : 25%;
+    width: 100%;
+    border : none;
+}
+#search-result{
+    width : 98%;
+    margin-top : 5%;
+    margin-left : 4%;
+    border : 1px;
+    height : 400px;
+}
+#search-result ion-item{
+    background-color : #DBBC8A;
+}
+
+
+
+/*Style de la page de consultation d'une bière*/
+#beer-container{
+    margin-top : 10%;
+    background-color : #DBBC8A;
+    width : 90%;
+    margin-left : 5%;
+    height : 540px;
+    padding-left : 6%;
+    padding-right : 6%;
+    padding-top : 6%;
+    padding-bottom : 7%;
+}
+#beer-back-button{
+
+}
+#beer-icon{
+    margin-top : -2%;
+    margin-left : 2%;
+    float : left;
+    width : 40%;
+    height : auto;
+}
+#beer-name-label{
+    margin-top : 2%;
+    margin-left : 13%;
+}
+#beer-color-label{
+    float:left;
+    margin-top : 7%;
+    margin-left : 4%;
+}
+#beer-origin-label{
+    font-size : 16px;
+    margin-left : 47%;
+}
+#beer-degree-label{
+    margin-top : 7%;
+    margin-left : 6%;
+}
+#beer-description{
+    margin-top : 5%;
+    margin-bottom : -1%;
+}
+#beer-hunts-label{
+    padding-top : 5%;
+    color : saddlebrown;
+}
+#beer-separator{
+    margin-top : -2.2%;
+    border-color : saddlebrown;
+    margin-bottom : 2.2%;
+}
+#beer-hunts-list{
+
+}
+#beer-item{
+
+}
+
+
+/*Style de la page de consultation d'un bar*/
+#bar-container{
+    float : left;
+    margin-top : 10%;
+    background-color : #DBBC8A;
+    width : 90%;
+    margin-left : 5%;
+    height : 540px;
+    padding-left : 6%;
+    padding-right : 6%;
+    padding-top : 6%;
+    padding-bottom : 7%;
+}
+#bar-icon{
+    width : 35%;
+    height : auto;
+    margin-top : %;
+    margin-left : 5%;
+}
+#bar-name-label{
+    margin-left : 6%;
+}
+#bar-address-label{
+    float:right;
+    margin-top : 15%;
+    margin-right : 3%;
+}
+#bar-address-label p{
+    font-size : 16px;
+    margin-top :-5%;
+}
+#bar-description-label{
+    margin-top : 5%;
+    margin-left : 3%;
+    margin-right : 3%;
+}
+#bar-finishedHunts-label{
+    padding-top : 3%;
+    color : saddlebrown;
+}
+#bar-separator{
+    margin-top : -2.2%;
+    border-color : saddlebrown;
+    margin-bottom : 2.2%;
+}
+#bar-finishedHunts-list{
+
+}
+#bar-item{
+
+}
+#bar-item-hunter{
+    float : right ;
+}
+#bar-pendingHunts-label{
+    padding-top : 5%;
+    color : saddlebrown;
+}
+bar-pendingHunts-list{
+
+}
+
+/*Style de la page de consultation d'un hunter*/
+#hunter-container{
+    margin-top : 10%;
+    background-color : #DBBC8A;
+    width : 90%;
+    margin-left : 5%;
+    height : 540px;
+    padding-left : 6%;
+    padding-right : 6%;
+    padding-top : 6%;
+    padding-bottom : 7%;
+}
+#hunter-icon{
+    width : 40%;
+    margin-top : 5%;
+    margin-left: 4%;
+}
+#hunter-rightDiv{
+    float:right;
+    margin-top : 7%;
+    margin-right : 20%;
+}
+#hunter-name-label{
+    font-size : 26px;
+}
+#hunter-score-label{
+    font-size : 18px;
+}
+#hunter-level-label{
+    font-size : 18px;
+}
+#hunter-hunts-label{
+    font-size : 14px;
+    margin-left : 2%;
+    margin-top : 5%;;
+}
+#hunter-informations-label{
+    margin-top : 3%;
+    margin-left : 2%;
+    padding-top : 3%;
+    color : saddlebrown;
+}
+#hunter-separator{
+    margin-top : -2.7%;
+    border-color : saddlebrown;
+    margin-bottom : 2.2%;
+}
+#hunter-inscription-label{
+
+}
+#hunter-potential-label{
+
+}
+#hunter-trophy-label{
+
+}
+
+/*Style de la page de consultation d'un chasse*/
+#consultHunt-container{
+    margin-top : 18.5%;
+    background-color : #DBBC8A;
+    width : 90%;
+    margin-left : 5%;
+    padding-left : 6%;
+    padding-right : 6%;
+    padding-top : 6%;
+    padding-bottom : 8%;
+}
+#consultHunt-beer-label{
+
+}
+#consultHunt-icon{
+    width :38%;
+    margin-left : 1%;
+}
+#consultHunt-rightDiv{
+    float : right ;
+    margin-top : 6%;
+    margin-right : -2%;
+}
+#consultHunt-rightDiv h4{
+    margin-top : -3%;
+}
+#consultHunt-color-label{
+
+}
+#consultHunt-origin-label{
+
+}
+#consultHunt-informations-label{
+    margin-top : 3%;
+    margin-left : 2%;
+    padding-top : 3%;
+    color : saddlebrown;
+}
+#consultHunt-separator{
+    margin-top : -2.2%;
+    border-color : saddlebrown;
+    margin-bottom : 2.2%;
+}
+#consultHunt-hunter-label{
+    margin-left : 5%;
+    padding-top : 3%;
+    font-size : 16px;
+}
+#consultHunt-time-label{
+    margin-left : 5.5%;
+    font-size : 16px;
+}
+#consultHunt-bar-label{
+    margin-left : 5%;
+    font-size : 20px;
+}
+#consultHunt-footer{
+    background-color:white;
+    width : 100%;
+    height : 105px;
+    float:left;
+    margin-top : 16.5%;
+}
+#consultHunt-vote-control{
+
+}
+#consultHunt-confirm-button{
+    width : 50%;
+    height : 105px;
+    text-align:center;
+    font-size : 19px;
+    padding-top : 10.1%;
+    background-color : #bc7a3f;
+}
+
+#consultHunt-infirm-button{
+    margin-left : 50%;
+    width : 50%;
+    height : 105px;
+    font-size : 19px;
+    text-align:center;
+    padding-top : 10.1%;
+    margin-top : -29.2%;
+    background-color : #bc8b49; 
+}
+#consultHunt-overlayDiv{
+
+}
+#consultHunt-overlay{
+    background-color: black;
+    opacity : 0.75;
+    width : 100%;
+    height : 105px;
+    position : absolute;
+    z-index : 5;
+
+}
+#consultHunt-overlayDiv p{
+    position : absolute;
+    z-index : 8;
+    width : 100%;
+    font-size : 14px;
+    text-align: center;
+    color : white;
+    margin-top : 10%;
+}
+#consultHunt-unavailable-button{
+    text-align : center;
+    font-size : 20px;
+    padding-top : 10%;
+    padding-bottom : 11.5%;
+    background-color : #bc8b49;
+}
+
+/*Style de la page d'édition du profil*/
+#editProfile-container{
+    margin-top : 10.5%;
+    background-color : #DBBC8A;
+    width : 90%;
+    margin-left : 5%;
+    padding-left : 6%;
+    padding-right : 6%;
+    padding-top : 6%;
+    padding-bottom : 7%;
+}
+#editProfile-errorMessage-container{
+    margin-left : 4%;
+    margin-right : 4%;
+    text-align : center;
+}
+#editProfile-infoMessage{
+    color : dimgrey;
+}
+#editProfile-errorMessage{
+    color : darkred;
+}
+#editProfile-description-field{
+    border : none;
+    margin-top : 3%;
+}
+#editProfile-dateOfBirth-field{
+    border : none;
+        margin-top : 4%;
+}
+#editProfile-oldPass-field{
+    border : none;
+        margin-top : 4%;
+}
+#editProfile-newPass-field{
+    border : none;
+        margin-top : 4%;
+}
+#editProfile-confirm-field{
+    border : none;
+        margin-top : 4%;
+}
+#editProfile-submit-button{
+    float:left;
+    margin-top : 7%;
+    background-color : #bc7a3f;
+    height : 35%;
+    text-align : center;
+    width : 100%;
+    color : black;
+    font-size: 28px;
+    padding-top : 8%;
+    padding-bottom : 8%;
+}
