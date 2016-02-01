@@ -41,11 +41,12 @@ angular.module('BeerClient.controllers')
         $scope.colorId="";
         $scope.originSelected="";
         $scope.originId="";
-        $scope.isPressureSelected="";
+        $scope.pressureSelected=false;
         $scope.priceMinSelected="";
         $scope.priceMaxSelected="";
         $scope.degreeMinSelected="";
         $scope.degreeMaxSelected="";
+        $scope.statusSelected=1;
         //     Récupération des bières pour initialiser l'autocomplete du filtre de bières
         $scope.beers = [];
         //         Récupération de toutes les bières pour loger dans l'autocomplete
@@ -170,20 +171,38 @@ angular.module('BeerClient.controllers')
                 $scope.priceMaxSelected="";
             }else if(priceClicked=="Moins de 3€"){
                 $scope.priceMinSelected=0;
-                $scope.priceMaxSelected=3;
-            }else if(priceClicked=="3€ à 5€"){
+                $scope.priceMaxSelected=parseFloat("3.01");
+            }else if(priceClicked=="De 3€ à 5€"){
                 $scope.priceMinSelected=3;
-                $scope.priceMaxSelected=5;
+                $scope.priceMaxSelected=parseFloat("5.01");
             }else if(priceClicked=="Plus de 5€"){
-                $scope.priceMinSelected=5;
+                $scope.priceMinSelected=parseFloat("4.999");
                 $scope.priceMaxSelected=100;
+            }
+            $scope.updateMap();
+        }
+        // Fonction chargée de récupérer le statut de la chasse marquée
+        $scope.setStatus= function(statusClicked){
+            if(statusClicked==""){
+                $scope.statusSelected=1;
+            }else if(statusClicked=="En cours"){
+                $scope.statusSelected=0;
+            }
+            $scope.updateMap();
+        }
+        // Fonction chargée de récupérer le statut du toggle de pression
+        $scope.setPressure= function(bool){
+            if(bool==true){
+                $scope.pressureSelected=true;
+            }else{
+                $scope.pressureSelected=false;
             }
             $scope.updateMap();
         }
 
         // Fonction chargée de mettre à jour la carte en fonction des données des filtres
         $scope.updateMap=function(){
-            MapService.getBarsFromFilters($scope.beerId, $scope.colorId, $scope.originId, $scope.isPressureSelected, $scope.priceMinSelected, $scope.priceMaxSelected, $scope.degreeMinSelected, $scope.degreeMaxSelected).then(function(response){
+            MapService.getBarsFromFilters($scope.beerId, $scope.colorId, $scope.originId, $scope.pressureSelected, $scope.priceMinSelected, $scope.priceMaxSelected, $scope.degreeMinSelected, $scope.degreeMaxSelected, $scope.statusSelected).then(function(response){
                 $scope.filteredHunts=response;
                 $scope.clearMarkers();
                 $scope.filteredHunts.forEach(function(element, index, array){

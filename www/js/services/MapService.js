@@ -96,7 +96,7 @@ angular.module('BeerClient.services')
             });
         },
 
-        getBarsFromFilters:function(beerName, color, origin, isPressure, priceMin, priceMax, degreeMin, degreeMax){
+        getBarsFromFilters:function(beerName, color, origin, isPressure, priceMin, priceMax, degreeMin, degreeMax, status){
             var valuesToPost ={};
             if(beerName!=""){
                 valuesToPost.beer=parseInt(beerName.split('/')[3]);
@@ -107,8 +107,8 @@ angular.module('BeerClient.services')
             if(origin!=""){
                 valuesToPost.origin=parseInt(origin.split('/')[3]);
             }
-            if(isPressure!=""){
-                valuesToPost.pressure=isPressure;
+            if(isPressure==true || isPressure==false){
+                valuesToPost.isPressure=isPressure;
             }
             if(priceMin!=""){
                 valuesToPost.price_min=priceMin;
@@ -122,13 +122,15 @@ angular.module('BeerClient.services')
             if(degreeMax!=""){
                 valuesToPost.degree_max=degreeMax;
             }
-            valuesToPost.status=1;
-
+            if(status!=""){
+                valuesToPost.status=status;
+            }
+console.log(valuesToPost);
             return $http.post('http://beer.sinjo.xyz/post_hunt_filter', valuesToPost)
                 .then(function successCallBack(response){
                 var returnValue =[];
                 response.data.forEach(function(element,index,array){
-                   var returnItem = {};
+                    var returnItem = {};
                     returnItem.name=element.bar.name;
                     returnItem.latitude=element.bar.latitude;
                     returnItem.longitude=element.bar.longitude;

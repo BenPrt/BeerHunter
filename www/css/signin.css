@@ -1,0 +1,71 @@
+/*Style de la page d'inscription*/
+#signin-back-button{
+    float:left;
+    width : 15%;
+    height : auto;
+    padding-left : 5%;
+    padding-top : 6%;
+}
+#signin-navbar{
+    background : none;
+}
+#signin-logo{
+    padding-left : 5%;
+    width : 75%;
+    height : auto;
+    padding-bottom :4%;
+}
+#signin-fields{
+    margin-top : 1.5%;
+    padding-top : 3%;
+    padding-bottom: 2.5%;
+    margin-left : 7%;
+    width : 86%;
+    background-color : #DBBC8A;
+}
+#signin-errorMessage-container{
+    margin-left : 7%;
+    margin-right : 7%;
+    text-align : center;
+}
+#signin-infoMessage{
+    color : dimgrey;
+}
+#signin-errorMessage{
+    color : darkred;
+}
+#signin-username-field{
+    margin-left : 7.5%;
+    margin-top : 2%;
+    width :85%;
+    border : none;
+}
+#signin-mail-field{
+    margin-left : 7.5%;
+    margin-top : 4%;
+    width :85%;
+    border : none;
+}
+#signin-pass-field{
+    margin-left : 7.5%;
+    margin-top : 3%;
+    width :85%;
+    border : none;
+}
+#signin-confirm-field{
+    margin-left : 7.5%;
+    margin-top : 3%;
+    margin-bottom : 5%;
+    width :85%;
+    border : none;
+}
+#signin-submit-button{
+    margin-top : 13.5%;
+    background-color : #bc7a3f;
+    text-align : center;
+    width : 100%;
+    color : black;
+    font-size: 28px;
+    padding-top : 6%;
+    padding-bottom : 6%;
+}

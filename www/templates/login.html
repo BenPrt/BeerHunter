@@ -1,14 +1,13 @@
 <ion-view id="login" name="login-view">
     <ion-content class="padding">
-        <img class="full-logo" src="img/FullLogo.png" />
+        <img class="login-logo" src="img/FullLogo.png" />
         <div id="login-fields">
             <ion-md-input id="login-username-field" placeholder="Nom d'utilisateur" highlight-color="assertive" type="text" ng-model="data.username"></ion-md-input>
             <ion-md-input id="login-pass-field" placeholder="Mot de Passe" highlight-color="assertive" type="password" ng-model="data.password"></ion-md-input>
-            <div class="login-free-space"><p>blabla</p></div>
         </div>
-        <div id="buttons-nav-bar">
-            <div id="SigninButton" ng-click="goToSignin()">Inscription</div>
-            <div id="LoginButton" ng-click="login(data)">Connexion</div>
+        <div id="login-buttons-nav-bar">
+            <div id="login-signinButton" ng-click="goToSignin()">Inscription</div>
+            <div id="login-loginButton" ng-click="login(data)">Connexion</div>
         </div>
     </ion-content>
 </ion-view>

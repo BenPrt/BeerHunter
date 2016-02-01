@@ -1,23 +1,9 @@
-/* Empty. Add your own CSS if you like */
-
-map {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.scroll {
-  height: 100%;
-}
-
-
-/* Empty. Add your own CSS if you like */
+/* Style global de l'app*/
 #mapTemplate,#hunt,#login,#signin,#menuContent,#search,#beer,#bar,#hunter,#consultHunt,#editProfile{
     color:black;
     background-color:white;
     background-image:url(../img/background.jpg);
 }
-
-/* Style global de l'app*/
 ul
 {
     list-style-type: none;
@@ -54,151 +40,6 @@ ul
 .bar .title{
     height : 60px;
 }
-
-
-
-/*Style de la page de login*/
-.full-logo{
-    width : 85%;
-    height : auto;
-    padding-top : 18%;
-    padding-left: 15.5%;
-}
-#login-fields{
-    margin-left : 8%;
-    width : 84%;
-    background-color : #DBBC8A;
-    opacity : 0.9;
-    margin-top : 4.8%;
-}
-#login-username-field{
-    padding-top: 13%;
-    margin-left : 4%;
-    width :92%;
-    border : none;
-    color : white;
-}
-#login-pass-field{
-    margin-left : 4%;
-    margin-top : 5%;
-    width :92%;
-    border : none;
-}
-.login-free-space{
-    margin-top : 1%;
-}
-.login-free-space p{
-    visibility : hidden;
-}
-#buttons-nav-bar{
-    margin-top : 11%;
-    height : 35%;
-    width : 100%;
-    background-color : white;
-}
-#SigninButton{
-    width : 50%;
-    float:left;
-    background-color : #bc7a3f;
-    color : black;
-    text-align : center;
-    font-size : 28px;
-    padding-top : 8%;
-    padding-bottom : 8%;
-}
-#LoginButton{
-    margin-left : 49.5%;
-    width:51%;
-    background-color : #bc8b49;
-    margin-top : 1%;
-    color : black;
-    font-size: 28px;
-    text-align : center;
-    padding-top : 8%;
-    padding-bottom : 8%;
-}
-
-
-
-/*Style de la page d'inscription*/
-#signin-back-button{
-    float:left;
-    width : 15%;
-    height : 10%;
-    padding-left : 5%;
-    padding-top : 6%;
-}
-#signin-navbar{
-    background : none;
-}
-#signin-logo{
-    padding-left : 5%;
-    width : 80%;
-    height : auto;
-    padding-bottom :4%;
-}
-#signin-fields{
-    margin-top : 4%;
-    padding-top : 3%;
-    margin-left : 5%;
-    width : 90%;
-    background-color : #DBBC8A;
-}
-#signin-errorMessage-container{
-    margin-left : 7%;
-    margin-right : 7%;
-    text-align : center;
-}
-#signin-infoMessage{
-    color : dimgrey;
-}
-#signin-errorMessage{
-    color : darkred;
-}
-#signin-username-field{
-    margin-left : 4%;
-    margin-top : 4%;
-    width :92%;
-    border : none;
-}
-#signin-mail-field{
-    margin-left : 4%;
-    margin-top : 5%;
-    width :92%;
-    border : none;
-}
-#signin-pass-field{
-    margin-left : 4%;
-    margin-top : 5%;
-    width :92%;
-    border : none;
-}
-#signin-confirm-field{
-    margin-left : 4%;
-    margin-top : 5%;
-    margin-bottom : 5%;
-    width :92%;
-    border : none;
-}
-.signin-free-space{
-    margin-top : 1%;
-}
-.signin-free-space p{
-    visibility : hidden;
-}
-#signin-submit-button{
-    margin-top : 15%;
-    background-color : #bc7a3f;
-    height : 35%;
-    text-align : center;
-    width : 100%;
-    color : black;
-    font-size: 28px;
-    padding-top : 8%;
-    padding-bottom : 8%;
-}
-
-
 
 
 /*Style de la page de chasse*/
@@ -332,137 +173,6 @@ ul
     padding-top : 8%;
     padding-bottom : 8%;
 }
-
-
-
-/* Style de la page d'accueil/de la carte */
-#map-filter-container{
-    margin-top : 7.5%;
-    margin-left : 3.5%;
-    padding-top : 1.5%;
-    width : 93%;
-    background-color : #DBBC8A;
-    padding-bottom : 2%;
-}
-#map-overlay{
-    width :100%;
-    height : 270%;
-    opacity : 0.4;
-    position : absolute;
-    top : -8%;
-    left : 0;
-    background-color : black;
-    z-index: 5;
-}
-#map-beer-field{
-    width : 90%;
-    margin-top : 0%;
-    margin-left : 5%;
-    border : none;
-    z-index : 11;
-}
-#map-beer-label{
-    font-size : 28px;
-    padding-top : 21%;
-    padding-bottom: 20%;
-    padding-left : 15%;
-}
-#map-beer-reset{
-    float : right;
-    padding-right : 14%;
-    color : darkred;
-    font-size : 23px;
-}
-#map-beerAutocomplete{
-    width : 82%;
-    height : 100%;
-    margin-top : 0.5%;
-    margin-left : 4.9%;
-    position : absolute;
-    z-index : 15;
-}
-#map-beer-item{
-    font-size : 15px;
-}
-
-#map-color-filter{
-    margin-top : 3%;
-    background-color: #DBBC8A;
-    border : none;
-    width : 99%;
-    margin-left : 0.5%;
-}
-#map-color-filter-label{
-
-}
-#map-color-filter-select{
-    width : 50%;
-    background-color: #D1B17D;
-}
-#map-origin-filter{
-    margin-top : 2%; 
-    border:none;
-    background-color: #DBBC8A;
-    border : none;
-    width : 99%;
-    margin-left : 0.5%;
-}
-#map-origin-filter-label{
-
-}
-#map-origin-filter-select{
-    width : 50%;
-    background-color: #D1B17D;
-}
-#map-degree-filter{
-    margin-top : 2%; 
-    border:none;
-    background-color: #DBBC8A;
-    border : none;
-    width : 99%;
-    margin-left : 0.5%;
-}
-#map-degree-filter-label{
-    background-color: #DBBC8A;
-}
-#map-degree-filter-select{
-    width : 53%;
-    background-color: #D1B17D;
-}
-#map-price-filter{
-    margin-top : 2%; 
-    border:none;
-    background-color: #DBBC8A;
-    border : none;
-    width : 99%;
-    margin-left : 0.5%;
-}
-#map-price-filter-label{
-    background-color: #DBBC8A;
-}
-#map-price-filter-select{
-    width : 50%;
-    background-color: #D1B17D;
-}
-#map-mapContainer{
-    position : absolute;
-    margin-top : 3%;
-    height : 315px;
-    width : 95%;
-    margin-left : 2.5%;
-    z-index : 10;
-}
-
-.scroll{100%;}
-
-
-#map{
-    height:55%;
-    width : 97%;
-}
-
-
-
 
 
 /* Style de la page de recherche */
@@ -832,19 +542,19 @@ bar-pendingHunts-list{
 }
 #editProfile-dateOfBirth-field{
     border : none;
-        margin-top : 4%;
+    margin-top : 4%;
 }
 #editProfile-oldPass-field{
     border : none;
-        margin-top : 4%;
+    margin-top : 4%;
 }
 #editProfile-newPass-field{
     border : none;
-        margin-top : 4%;
+    margin-top : 4%;
 }
 #editProfile-confirm-field{
     border : none;
-        margin-top : 4%;
+    margin-top : 4%;
 }
 #editProfile-submit-button{
     float:left;

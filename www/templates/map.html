@@ -15,69 +15,69 @@
                 </ul>
             </ion-scroll>
 
+            <ion-scroll id="map-filters-scroll" direction="y">
+                <label id="map-color-filter" class="item item-input item-select" ng-hide="beerSelected">
+                    <div id="map-color-filter-label">
+                        Robe de la bière
+                    </div>
+                    <select id="map-color-filter-select" ng-model="colorClicked" ng-change="setColor(colorClicked)">
+                        <option value="" selected>Indifférent</option>
+                        <option ng-repeat="color in colors">{{color.name}}</option>
+                    </select>
+                </label>
 
+                <label id="map-origin-filter" class="item item-input item-select" ng-hide="beerSelected">
+                    <div id="map-origin-filter-label">
+                        Origine de la bière
+                    </div>
+                    <select id="map-origin-filter-select" ng-model="originClicked" ng-change="setOrigin(originClicked)">
+                        <option value="" selected>Indifférent</option>
+                        <option ng-repeat="origin in origins">{{origin.name}}</option>
+                    </select>
+                </label>
 
-            <label id="map-color-filter" class="item item-input item-select" ng-hide="beerSelected">
-                <div id="map-color-filter-label">
-                    Robe de la bière
-                </div>
-                <select id="map-color-filter-select" ng-model="colorClicked" ng-change="setColor(colorClicked)">
-                    <option value="" selected>Indifférent</option>
-                    <option ng-repeat="color in colors">{{color.name}}</option>
-                </select>
-            </label>
+                <label id="map-degree-filter" class="item item-input item-select"  ng-hide="beerSelected">
+                    <div id="map-degree-filter-label">
+                        Force de la bière
+                    </div>
+                    <select id="map-degree-filter-select" ng-model="degreeClicked" ng-change="setDegree(degreeClicked)">
+                        <option value=""  selected>Indifférent</option>
+                        <option>Légère (<5°)</option>
+                        <option>Moyenne (5-8°)</option>
+                        <option>Forte (>8°)</option>
+                    </select>
+                </label>
 
-            <label id="map-origin-filter" class="item item-input item-select" ng-hide="beerSelected">
-                <div id="map-origin-filter-label">
-                    Origine de la bière
-                </div>
-                <select id="map-origin-filter-select" ng-model="originClicked" ng-change="setOrigin(originClicked)">
-                    <option value="" selected>Indifférent</option>
-                    <option ng-repeat="origin in origins">{{origin.name}}</option>
-                </select>
-            </label>
+                <ion-toggle id="map-pressure-filter" ng-model="pressureClicked.checked" ng-change="setPressure(pressureClicked.checked)" toggle-class="toggle-assertive">Servie à la pression</ion-toggle>
 
-            <label id="map-degree-filter" class="item item-input item-select"  ng-hide="beerSelected">
-                <div id="map-degree-filter-label">
-                    Force de la bière
-                </div>
-                <select id="map-degree-filter-select" ng-model="degreeClicked" ng-change="setDegree(degreeClicked)">
-                    <option value=""  selected>Indifférent</option>
-                    <option>Légère (<5°)</option>
-                    <option>Moyenne (5-8°)</option>
-                    <option>Forte (>8°)</option>
-                </select>
-            </label>
+                <label id="map-price-filter" class="item item-input item-select">
+                    <div class="map-price-filter-label">
+                        Tranche de prix
+                    </div>
+                    <select id="map-price-filter-select" ng-model="priceClicked" ng-change="setPrice(priceClicked)">
+                        <option value="" selected>Indifférent</option>
+                        <option>Moins de 3€</option>
+                        <option>De 3€ à 5€</option>
+                        <option>Plus de 5€</option>
+                    </select>
+                </label>
 
+                <label id="map-status-filter" class="item item-input item-select">
+                    <div class="map-status-filter-label">
+                        Statut de la chasse
+                    </div>
+                    <select id="map-status-filter-select" ng-model="statusClicked" ng-change="setStatus(statusClicked)">
+                        <option value="" selected>Terminée</option>
+                        <option>En cours</option>
+                    </select>
+                </label>
 
-            <!--
-Champ pression, pour plus tard
-<ion-toggle id="map-pressure-filter" ng-model="pressureClicked" toggle-class="toggle-assertive">Servie à la pression</ion-toggle>
--->
-
-            <label id="map-price-filter" class="item item-input item-select">
-                <div class="map-price-filter-label">
-                    Tranche de prix
-                </div>
-                <select id="map-price-filter-select" ng-model="priceClicked" ng-change="setPrice(priceClicked)">
-                    <option value="" selected>Indifférent</option>
-                    <option>Moins de 3€</option>
-                    <option>3€ à 5€</option>
-                    <option>Plus de 5€</option>
-                </select>
-            </label>
-
-
+            </ion-scroll>
         </div>
-        <div id="map-mapContainer" data-tap-disabled="true">
-            <app-map style="height:400px;margin:12px;box-shadow:0 3px 25px black;"
-                     center="basel"
-                     zoom="15"
-                     markers="whoiswhere"
-                     > 
-            </app-map>
 
-            <!--            <div id="map"></div>-->
+
+        <div id="map-mapContainer" data-tap-disabled="true">
+            <app-map></app-map>
         </div>
     </ion-content>
 </ion-view>
