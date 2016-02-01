@@ -17,6 +17,14 @@ angular.module('BeerClient.controllers')
         $state.go('app.search');
     }
     
+    $scope.goToHuntList=function(){
+        $state.go('app.huntList');
+    }
+    
+    $scope.goToRanking=function(){
+        $state.go('app.ranking');
+    }
+    
     $scope.goToProfile=function(){
         $scope.profileID=$rootScope.userConnected['@id'].split('/')[3];
         $state.go('app.hunter/:hunterId', { hunterId: $scope.profileID});

@@ -161,6 +161,25 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
         }
     })
 
+    .state('app.huntList',{
+        url: '/huntList',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/huntList.html',
+                controller: 'HuntListCtrl'
+            },
+            resolve : {
+                "checkSession": function($state, $rootScope, AuthService){
+                    if($rootScope.isAuth==false || $rootScope.isAuth==null){
+                        $state.go('login');
+                    }
+                }
+
+
+            }
+        }
+    })
+    
         .state('app.consultHunt/:huntId',{
         url: '/consultHunt/:huntId',
         views: {
@@ -199,6 +218,24 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
         }
     })
 
+    .state('app.ranking',{
+        url: '/ranking',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/ranking.html',
+                controller: 'RankingCtrl'
+            },
+            resolve : {
+                "checkSession": function($state, $rootScope, AuthService){
+                    if($rootScope.isAuth==false || $rootScope.isAuth==null){
+                        $state.go('login');
+                    }
+                }
+
+
+            }
+        }
+    })
 
 
     // if none of the above states are matched, use this as the fallback

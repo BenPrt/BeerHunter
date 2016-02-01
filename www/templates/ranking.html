@@ -1,0 +1,15 @@
+<ion-view id="ranking" title='<img class="title-image" src="img/FontLogo_Light.png" />'>
+    <ion-content>
+        <ion-scroll id="ranking-container" direction="y">
+
+            <ul id="ranking-hunter-list">
+                <li >
+                    <ion-item id="ranking-item" ng-repeat="hunter in hunters" ng-click="goToHunter(1)" >
+                        {{hunter.username}}<p id="bar-item-hunter">{{hunter.validScore}} points</p>
+                    </ion-item>
+                </li>
+            </ul>
+           
+        </ion-scroll>
+    </ion-content>
+</ion-view>

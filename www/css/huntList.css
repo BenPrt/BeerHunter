@@ -1,0 +1,39 @@
+/* Style de la liste des vérifications*/
+#huntList-container{
+    margin-top : 10%;
+    background-color : #DBBC8A;
+    width : 90%;
+    margin-left : 5%;
+    height : 90%;
+    padding-left : 6%;
+    padding-right : 6%;
+    padding-top : 6%;
+    padding-bottom : 7%;
+}
+#huntList-hunts-label{
+    color : saddlebrown;
+}
+#huntList-separator{
+    margin-top : -2.2%;
+    border-color : saddlebrown;
+    margin-bottom : 2.2%;
+}
+#huntList-hunts-list{
+    margin-top : 5%;
+    height : 85%;
+}
+#huntList-item-bar{
+    width : 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#huntList-item-beer{
+    width : 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#huntList-item-button{
+    font-size : 28px;
+    float : right;
+    margin-top : -14.5%;
+}

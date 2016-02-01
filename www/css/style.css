@@ -1,5 +1,5 @@
 /* Style global de l'app*/
-#mapTemplate,#hunt,#login,#signin,#menuContent,#search,#beer,#bar,#hunter,#consultHunt,#editProfile{
+#mapTemplate,#hunt,#login,#signin,#menuContent,#search,#beer,#bar,#hunter,#consultHunt,#editProfile,#huntList,#ranking{
     color:black;
     background-color:white;
     background-image:url(../img/background.jpg);
