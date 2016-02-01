@@ -1,6 +1,7 @@
 /* Style de la page d'accueil/de la carte */
 #map-filter-container{
-    margin-top : 7.5%;
+    float:left;
+    margin-top : 6.5%;
     margin-left : 4%;
     padding-top : 0.5%;
     width : 92%;
@@ -132,11 +133,10 @@
 
 
 #map-mapContainer{
-    position : absolute;
+    float:left;
     margin-top : 2%;
-    height : 280px;
+    height : 53%;
     width : 95%;
     margin-left : 2.5%;
-    margin-bottom : -2%;
 }
 

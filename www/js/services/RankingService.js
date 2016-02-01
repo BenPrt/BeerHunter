@@ -18,15 +18,25 @@ angular.module('BeerClient.services')
                     returnItem.id=element['@id'].split('/')[3];
                     returnItem.name=element.username;
                     returnItem.validScore=element.validScore;
-                    returnItem.potentiel=parseInt(element.potentialScore) - parseInt(element.validScore);
+                    returnItem.potentiel=parseInt(element.potentialScore - element.validScore);
                     returnValue.push(returnItem);
                 });
                 console.log(returnValue);
-                //                returnValue.sort(function(a, b) {
-                //                    if(a.id>b.id) return -1;
-                //                    if(a.id<b.id) return 1;
-                //                    return 0;
-                //                });
+                returnValue.sort(function(a, b) {
+                    if(a.validScore>b.validScore){
+                        return -1;
+                    }else if(a.validScore<b.validScore){
+                        return 1;  
+                    }else{
+                        if(a.potentiel>b.potentiel){
+                            return -1;
+                        }else{
+                            return 1;
+                        }
+                    }
+                    return 0;
+                });
+                console.log(returnValue);
                 return returnValue;
             }, function errorCallback(response) {
                 var alertPopup = $ionicPopup.alert({

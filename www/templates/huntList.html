@@ -5,9 +5,9 @@
             <p id="huntList-hunts-label">Voici les dernières chasses en cours ...</p>
             <hr id="huntList-separator">
 
-            <ion-scroll direction="y">
-                <ul id="huntList-hunts-list">
-                    <li >
+            <ion-scroll id="huntList-hunts-list" direction="y">
+                <ul >
+                    <li>
                         <ion-item id="huntList-item" ng-repeat="hunt in hunts" ng-click="goToHunt({{hunt.id}})" >
                             <div id="huntList-item-bar">{{hunt.bar}}</div>
                             <p id="huntList-item-beer">{{hunt.beer}}</p>

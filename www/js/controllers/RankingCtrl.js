@@ -7,7 +7,7 @@ angular.module('BeerClient.controllers')
     } else{
        
         RankingService.getRanking().then(function (response){
-            
+            $scope.hunters=response;
             
         });
         

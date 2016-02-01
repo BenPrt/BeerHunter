@@ -1,1 +1,31 @@
 /* Style de la page de classement */
+#ranking-container{
+    margin-top : 12%;
+    background-color : #DBBC8A;
+    width : 90%;
+    margin-left : 5%;
+    height : 85%;
+    padding-left : 6%;
+    padding-right : 6%;
+    padding-top : 6%;
+    padding-bottom : 7%;
+    margin-bottom : -5%;
+}
+#ranking-hunters-label{
+    color : saddlebrown;
+}
+#ranking-separator{
+    margin-top : -2.2%;
+    border-color : saddlebrown;
+    margin-bottom : 2.2%;
+}
+#ranking-hunter-list{
+    margin-top : 5%;
+    height : 90%;
+}
+#ranking-item{
+    
+}
+#ranking-item-hunter{
+    float:right;
+}

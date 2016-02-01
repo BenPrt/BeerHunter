@@ -107,8 +107,8 @@ angular.module('BeerClient.services')
             if(origin!=""){
                 valuesToPost.origin=parseInt(origin.split('/')[3]);
             }
-            if(isPressure==true || isPressure==false){
-                valuesToPost.isPressure=isPressure;
+            if(isPressure==0 || isPressure==1){
+                valuesToPost.pressure=isPressure;
             }
             if(priceMin!=""){
                 valuesToPost.price_min=priceMin;

@@ -1,5 +1,6 @@
 /* Style de la liste des vérifications*/
 #huntList-container{
+    float:left;
     margin-top : 10%;
     background-color : #DBBC8A;
     width : 90%;
@@ -20,7 +21,7 @@
 }
 #huntList-hunts-list{
     margin-top : 5%;
-    height : 85%;
+    height : 90%;
 }
 #huntList-item-bar{
     width : 80%;

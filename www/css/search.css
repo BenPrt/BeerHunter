@@ -1,0 +1,39 @@
+/* Style de la page de recherche */
+#search-container{
+    float:left;
+    margin-top : 10%;
+    margin-left : 3.5%;
+    background-color : #BA965B;
+    padding-right : 5%;
+    width : 93%;
+    height : 90%;
+}
+#search-tabs{
+    position : relative;
+    margin-top : -15%;
+    width : 105.5%
+}
+#search-beer-tab{
+}
+#search-bar-tab{
+
+}
+#search-hunter-tab{
+
+}
+#search-querying-field{
+    margin-top : 30%;
+    margin-left : 3%;
+    width: 100%;
+    border : none;
+}
+#search-result{
+    width : 99%;
+    margin-top : 3%;
+    margin-left : 3.5%;
+    border : 1px;
+    height : 72%;
+}
+#search-result ion-item{
+    background-color : #DBBC8A;
+}

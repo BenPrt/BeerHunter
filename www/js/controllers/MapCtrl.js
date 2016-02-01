@@ -41,7 +41,7 @@ angular.module('BeerClient.controllers')
         $scope.colorId="";
         $scope.originSelected="";
         $scope.originId="";
-        $scope.pressureSelected=false;
+        $scope.pressureSelected=0;
         $scope.priceMinSelected="";
         $scope.priceMaxSelected="";
         $scope.degreeMinSelected="";
@@ -193,9 +193,9 @@ angular.module('BeerClient.controllers')
         // Fonction chargée de récupérer le statut du toggle de pression
         $scope.setPressure= function(bool){
             if(bool==true){
-                $scope.pressureSelected=true;
+                $scope.pressureSelected=1;
             }else{
-                $scope.pressureSelected=false;
+                $scope.pressureSelected=0;
             }
             $scope.updateMap();
         }
