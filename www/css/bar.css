@@ -1,0 +1,66 @@
+/*Style de la page de consultation d'un bar*/
+#bar-container{
+    margin-top : 10.5%;
+    background-color : #DBBC8A;
+    width : 90%;
+    margin-left : 5%;
+    height : 89%;
+    padding-left : 6%;
+    padding-right : 6%;
+    padding-top : 6%;
+    padding-bottom : 7%;
+}
+#bar-icon{
+    width : 35%;
+    height : auto;
+    margin-top : %;
+    margin-left : 5%;
+}
+#bar-name-label{
+    margin-left : 6%;
+}
+#bar-address-label{
+    float:right;
+    margin-top : 12%;
+    margin-right : 3%;
+}
+#bar-address-label p{
+    font-size : 16px;
+    margin-top :-5%;
+}
+#bar-description-label{
+    margin-top : 14%;
+    color : saddlebrown;
+    margin-left : 4%;
+}
+#bar-separator{
+    margin-top : -2.5%;
+    border-color : saddlebrown;
+    margin-bottom : 2.2%;
+}
+#bar-description-label{
+    margin-top : 5%;
+    margin-left : 3%;
+    margin-right : 3%;
+}
+#bar-finishedHunts-label{
+    padding-top : 3%;
+    color : saddlebrown;
+}
+#bar-finishedHunts-list{
+
+}
+#bar-item{
+
+}
+#bar-item-hunter{
+    float : right ;
+}
+#bar-pendingHunts-label{
+    padding-top : 3%;
+    padding-left : 3.5%;
+    color : saddlebrown;
+}
+bar-pendingHunts-list{
+
+}

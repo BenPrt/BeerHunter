@@ -48,8 +48,6 @@ angular.module('BeerClient.services')
             });
         },
 
-
-
         
         post_Hunt: function(isPressure, beer, beers, bar, bars, price) {
             var beerToPost = beers.indexOf(beer);

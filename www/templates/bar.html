@@ -5,10 +5,12 @@
             <h2 id="bar-name-label">{{bar.name}}</h2>
             <img src="img/bar-icon.png" id="bar-icon"/>
             <div id="bar-address-label">
-                <p>42, le nom de la rue</p>
-                <p>59000 Lille</p>
+                <p>{{bar.address}}</p>
+                <p>{{bar.postal}} {{bar.city}}</p>
             </div>
-            <p id="bar-description-label">{{bar.description}}</p>
+            <p id="bar-description-label" ng-show="bar.description">Description</p>
+            <hr id="bar-separator" ng-show="bar.description">
+            <p id="bar-description">{{bar.description}}</p>
             <p id="bar-finishedHunts-label" ng-show="finishedHunts[0]!=null">Chasses terminées</p>
             <hr id="bar-separator" ng-show="finishedHunts[0]!=null">
             <ul id="bar-finishedHunts-list" ng-show="finishedHunts[0]!=null">

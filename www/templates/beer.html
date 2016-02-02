@@ -5,9 +5,11 @@
             <img id="beer-icon" src="img/beer-icon.png"/>
 
             <h3 id="beer-color-label">Bière {{color.name}}</h3>
-            <h3 id="beer-origin-label"> Pays d'origine : {{country.name}}</h3>
+            <h3 id="beer-origin-label"> Origine : {{country.name}}</h3>
             <p id="beer-degree-label"> Titrée à {{beer.degree}}°</p>
-            <p id="beer-description">{{beer.description}}</p>
+            <p id="beer-description-label" ng-show="beer.description">Description</p>
+            <hr id="beer-separator" ng-show="beer.description">
+            <p id="beer-description" ng-show="beer.description">{{beer.description}}</p>
             <p id="beer-hunts-label" ng-show="hunts[0]!=null">Endroits où elle a été dernièrement vue..</p>
             <hr id="beer-separator" ng-show="hunts[0]!=null">
             <ul id="beer-hunts-list" ng-show="hunts[0]!=null">

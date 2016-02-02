@@ -63,6 +63,8 @@ angular.module('BeerClient.controllers')
                 })
             })
         })
+        
+        
         $scope.goToHunt=function(huntId){
             $state.go('app.consultHunt/:huntId', { huntId: huntId});
         }

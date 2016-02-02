@@ -125,7 +125,6 @@ angular.module('BeerClient.services')
             if(status!=""){
                 valuesToPost.status=status;
             }
-console.log(valuesToPost);
             return $http.post('http://beer.sinjo.xyz/post_hunt_filter', valuesToPost)
                 .then(function successCallBack(response){
                 var returnValue =[];

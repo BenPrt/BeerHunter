@@ -1,0 +1,54 @@
+/*Style de la page d'édition du profil*/
+#editProfile-container{
+    float:left;
+    margin-top : 8%;
+    background-color : #DBBC8A;
+    width : 90%;
+    margin-left : 5%;
+    padding-left : 6%;
+    padding-right : 6%;
+    padding-top : 3%;
+    padding-bottom : 7%;
+}
+#editProfile-errorMessage-container{
+    margin-left : 4%;
+    margin-right : 4%;
+    text-align : center;
+}
+#editProfile-infoMessage{
+    color : dimgrey;
+}
+#editProfile-errorMessage{
+    color : darkred;
+}
+#editProfile-description-field{
+    border : none;
+    margin-top : 2%;
+}
+#editProfile-dateOfBirth-field{
+    border : none;
+    margin-top : 2.5%;
+}
+#editProfile-oldPass-field{
+    border : none;
+    margin-top : 2.5%;
+}
+#editProfile-newPass-field{
+    border : none;
+    margin-top : 2.5%;
+}
+#editProfile-confirm-field{
+    border : none;
+    margin-top : 2.5%;
+}
+#editProfile-submit-button{
+    float:left;
+    margin-top : 4%;
+    background-color : #bc7a3f;
+    text-align : center;
+    width : 100%;
+    color : black;
+    font-size: 28px;
+    padding-top : 5.5%;
+    padding-bottom : 5.5%;
+}
