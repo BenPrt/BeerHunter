@@ -1,0 +1,74 @@
+/*Style de la page de consultation d'un hunter*/
+#hunter-container{
+    float : left;
+    margin-top : 10.5%;
+    background-color : #DBBC8A;
+    width : 90%;
+    margin-left : 5%;
+    height : 77%;
+    padding-left : 6%;
+    padding-right : 6%;
+    padding-top : 6%;
+    padding-bottom : 7%;
+}
+#hunter-icon{
+    width : 40%;
+    margin-top : 5%;
+    margin-left: 4%;
+}
+#hunter-rightDiv{
+    float:right;
+    margin-top : 7%;
+    margin-right : 20%;
+}
+#hunter-name-label{
+    font-size : 26px;
+}
+#hunter-score-label{
+    font-size : 18px;
+}
+#hunter-level-label{
+    font-size : 18px;
+}
+#hunter-hunts-label{
+    font-size : 14px;
+    margin-left : 2%;
+    margin-top : 5%;;
+}
+#hunter-informations-label{
+    margin-top : 3%;
+    margin-left : 2%;
+    padding-top : 3%;
+    color : saddlebrown;
+}
+#hunter-separator{
+    margin-top : -2.7%;
+    border-color : saddlebrown;
+    margin-bottom : 2.2%;
+}
+#hunter-statistic-label{
+    margin-top : 3%;
+    margin-left : 2%;
+    padding-top : 3%;
+    color : saddlebrown;
+}
+#hunter-inscription-label{
+
+}
+#hunter-potential-label{
+
+}
+#hunter-trophy-label{
+
+}
+#hunter-edit-button{
+    float:left;
+    background-color : #bc7a3f;
+    margin-top : 6%;
+    text-align : center;
+    width : 100%;
+    color : black;
+    font-size: 28px;
+    padding-top : 3%;
+    padding-bottom : 3.5%;
+}

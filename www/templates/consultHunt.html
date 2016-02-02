@@ -1,7 +1,7 @@
 <ion-view id="consultHunt" title='<img class="title-image" src="img/FontLogo_Light.png" />'>
     <ion-content>
-        <ion-scroll id="consultHunt-container">
-            <img src="../img/hunt-icon.png" id="consultHunt-icon"/>
+        <div id="consultHunt-container">
+            <img src="img/hunt-icon.png" id="consultHunt-icon"/>
             <div id="consultHunt-rightDiv">
                 <h3 id="consultHunt-beer-label"> {{beer.name}}</h3>
                 <h4 id="consultHunt-color-label"> Bière {{color.name}}</h4>
@@ -11,32 +11,34 @@
             <hr id="consultHunt-separator">
 
             <p id="consultHunt-hunter-label"> Chassée par {{hunter.username}}</p>
+            <p id="consultHunt-pressure-label" ng-show="hunt.isPressure">Servie en pression</p>
+            <p id="consultHunt-notPressure-label" ng-hide="hunt.isPressure">Servie en bouteille</p>
             <p id="consultHunt-time-label" >le {{hunt.launchDate | date:'dd/MM/yyyy'}}</p>
 
             <p id="consultHunt-informations-label">Lieu de la chasse</p>
             <hr id="consultHunt-separator">
             <h3 id="consultHunt-bar-label">{{bar.name}}</h3>
 
-        </ion-scroll>
+        </div>
 
 
         <div id="consultHunt-footer">
-            <div id="consultHunt-overlayDiv" ng-show="alreadyVoted||visitorIsTheHunter">
-                <div id="consultHunt-overlay" ng-show="alreadyVoted||visitorIsTheHunter" ng-click="setErrorMessage()"></div>
+            <div id="consultHunt-overlayDiv" ng-show="alreadyVoted||visitorIsTheHunter" ng-click="setErrorMessage()">
                 <p>{{errorMessage}}</p>
             </div>
-            <div id="consultHunt-vote-control" ng-show="state=='pending'">
-                <div id="consultHunt-confirm-button" ng-show="state=='pending'" ng-click="vote(true)">
-                    Vérifier la chasse
-                </div>
-                <div id="consultHunt-infirm-button" ng-show="state=='pending'" ng-click="vote(false)">
-                    Annuler la chasse
-                </div>
+        </div>
+        <div id="consultHunt-vote-control" ng-show="state=='pending'">
+            <div id="consultHunt-confirm-button" ng-show="state=='pending'" ng-click="vote(true)">
+                Vérifier la chasse
             </div>
+            <div id="consultHunt-infirm-button" ng-show="state=='pending'" ng-click="vote(false)">
+                Annuler la chasse
+            </div>
+        </div>
 
-            <div id="consultHunt-unavailable-button" ng-show="state=='valid'" ng-click="vote(false)">
-                "Cette chasse n'est plus d'actualité"
-            </div>
+        <div id="consultHunt-unavailable-button" ng-show="state=='valid'" ng-click="vote(false)">
+            Chasse Indisponible !
+        </div>
         </div>
     </ion-content>
 </ion-view>

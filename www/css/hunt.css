@@ -50,7 +50,7 @@
 #beerAutocomplete{
     width : 80%;
     height : 46%;
-    margin-top : 31.5%;
+    margin-top : 38.5%;
     margin-left : 9.5%;
     position : absolute;
     z-index : 15;
@@ -89,7 +89,7 @@
 }
 #barAutocomplete{
     width : 80%;
-    height : 46%;
+    height : 54%;
     margin-top : 47%;
     margin-left : 9.5%;
     position : absolute;

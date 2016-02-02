@@ -11,13 +11,15 @@ angular.module('BeerClient.controllers')
             if($scope.hunter.username==$rootScope.userConnected.username){
                 $scope.consultingHimself=true;
             }
+
+            var diff = Math.abs(Date.now()-Date.parse($scope.hunter.dateOfBirth));
+            var ageDate = new Date(diff);
+            $scope.age = Math.abs(ageDate.getUTCFullYear() - 1970);
+
         });
 
-        $scope.calculateAge = function calculateAge(birthday) { // birthday is a date
-            var ageDifMs = Date.now() - birthday.getTime();
-            var ageDate = new Date(ageDifMs); // miliseconds from epoch
-            return Math.abs(ageDate.getUTCFullYear() - 1970);
-        }
+
+
 
         $scope.goToEdit = function (){
             $state.go('app.editProfile');

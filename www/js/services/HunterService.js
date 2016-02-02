@@ -10,7 +10,6 @@ angular.module('BeerClient.services')
                     'Authorization':'Bearer '+$rootScope.tokenSession
                 }
             }).then(function successCallback(response) {
-                console.log(response.data);
                 return response.data;
             }, function errorCallback(response) {    
                 var alertPopup = $ionicPopup.alert({
