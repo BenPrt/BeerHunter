@@ -4,22 +4,28 @@ angular.module('BeerClient.controllers')
         $state.go('login');
     }else{
         $scope.infoMessage="Ici éditez votre profil";
+        $scope.errorMessage="";
 
 
 
         $scope.edit = function(data){
-            //test date de naissance
-            
-            //si oldMdp présent, on fait un psotlogin pour savoir si ok
+            var reg= /!^(0?\d|[12]\d|3[01])-(0?\d|1[012])-((?:19|20)\d{2})$!/;
 
-            //si okay et champs new mdp et confirm présent et conforme, on fait l'edit vec le new mdp
-            EditProfileService.editProfile(data.description, data.dateOfBirth, data.newPass).then(function(response){
-
+            if(reg.test(data.dateOfBirth) || data.dateOfBirth==null){
+                if(data.newPass==data.confirm){
+                    EditProfileService.editProfile(data.description, data.dateOfBirth, data.oldPass, data.newPass, $rootScope.userConnected['@id']).then(function(response){
 
 
-            });
-            
-            //si non, si y a que description et/ou date de naissance on fait l'edit de ces champs
+
+                    });
+                }else{
+                    $scope.infoMessage="";
+                    $scope.errorMessage="Confirmez le mdp";
+                }
+            }else{
+                $scope.infoMessage="";
+                $scope.errorMessage="Date de naissance incorrecte";
+            }
         }
     }
 

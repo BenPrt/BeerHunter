@@ -24,8 +24,8 @@ angular.module('BeerClient.controllers')
             if($scope.userConnected['@id']==$scope.hunt.hunter){
                 $scope.visitorIsTheHunter=true;
             } else{
-                $scope.hunt.votes.forEach(function(element, index,array){
-                    if($rootScope.userConnected.votes.indexOf(element)!=-1){
+                $rootScope.userConnected.votes.forEach(function(element, index,array){
+                    if($scope.hunt.votes.indexOf(element)!=-1){
                         $scope.alreadyVoted=true;
                         console.log("il a déja votééé");
                     }

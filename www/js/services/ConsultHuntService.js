@@ -435,10 +435,8 @@ angular.module('BeerClient.services')
                         $http.put('http://beer.sinjo.xyz'+currentHunt['@id'], JSON.stringify(valuesToPUT), config)
                             .then(function successCallBack(response){
 
-                            var potentialScoreToPut = $rootScope.userConnected.potentialScore-5;
                             var validScoreToPut = $rootScope.userConnected.validScore+5;
                             var hunterValuesToPUT ={
-                                potentialScore : potentialScoreToPut,
                                 validScore : validScoreToPut
                             }
                             $http.put('http://beer.sinjo.xyz'+$rootScope.userConnected['@id'], JSON.stringify(hunterValuesToPUT), config)

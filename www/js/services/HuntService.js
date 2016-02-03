@@ -73,9 +73,9 @@ angular.module('BeerClient.services')
 
         post_Hunt: function(isPressure, beer, bar, price) {
             var beerToPost = '/api/beers/'+beer;
-            
+
             var barToPost = '/api/bars/'+bar;
-            
+
             hunterToPost = $rootScope.userConnected['@id'];
 
             var priceToPost = parseFloat(price);
@@ -93,16 +93,29 @@ angular.module('BeerClient.services')
                 price : priceToPost
             }), config)
                 .then(function successCallBack(response){
-                var alertPopup = $ionicPopup.alert({
-                    title: 'Félicitations !',
-                    template: 'Votre chasse a bien été prise en compte !'
-                });
-                $state.go('app.map');
+
+                var potentialScoreToPut = $rootScope.userConnected.potentialScore+15;
+
+                var hunterValuesToPUT ={
+                    potentialScore : potentialScoreToPut
+                }
+
+                $http.put('http://beer.sinjo.xyz'+$rootScope.userConnected['@id'], JSON.stringify(hunterValuesToPUT), config)
+                    .then(function successCallBack(response){
+                    var alertPopup = $ionicPopup.alert({
+                        title: 'Félicitations !',
+                        template: 'Votre chasse a bien été prise en compte !'
+                    });
+                    $state.go('app.map');
+                },function errorCallback(response){
+                    var alertPopup = $ionicPopup.alert({
+                        title: 'Erreur',
+                        template: 'Le serveur a renvoyé une erreur, si elle perdure, veuillez contacter un administrateur.'
+                    });
+                })
+
             },function errorCallback(response){
-                var alertPopup = $ionicPopup.alert({
-                    title: 'Erreur',
-                    template: 'Le serveur a renvoyé une erreur, si elle perdure, veuillez contacter un administrateur.'
-                });
+
             });
         }
     }
