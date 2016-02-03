@@ -15,7 +15,7 @@
                         <p id="hunter-statistic-label"> Statistiques de ce chasseur</p>
             <hr id="hunter-separator">
             <p id="hunter-inscription-label" >Inscrit depuis le {{hunter.createdAt | date:'dd/MM/yyyy'}}</p>
-            <p id="hunter-potential-label"> Potentiel : {{hunter.potentialScore-hunter.validScore}}</p>
+            <p id="hunter-potential-label"> Potentiel : {{hunter.potentialScore}}</p>
             <p id="hunter-trophy-label"> Trophées : {{hunter.trophyHunter.length}}</p>
         </ion-scroll>
         <div id="hunter-edit-button" ng-click="goToEdit()" ng-show="consultingHimself">Editer</div>

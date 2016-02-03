@@ -15,6 +15,7 @@ angular.module('BeerClient.services')
                 });
                 return response;
             },function errorCallback(response){
+                console.log(response);
                 var alertPopup = $ionicPopup.alert({
                     title: 'Erreur',
                     template: 'Le serveur a renvoyé une erreur, si elle perdure, veuillez contacter un administrateur.'
