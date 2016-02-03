@@ -12,14 +12,37 @@ angular.module('BeerClient.controllers')
         $scope.beers = [];
         HuntService.getBeers().then( function(response){
             $scope.beers = response;
+            $scope.beers.sort(function(a,b){
+                if(a.name<b.name){
+                    return -1;
+                }
+                if(a.name>b.name){
+                    return 1;
+                }
+                return 0;
+            })
             $scope.displayedBeers = $scope.beers;
         });
         //   Récupération des bars
         $scope.bars = [];
         HuntService.getBars().then( function(response){
             $scope.bars = response;
+            $scope.bars.sort(function(a,b){
+                if(a.name<b.name){
+                    return -1;
+                }
+                if(a.name>b.name){
+                    return 1;
+                }
+                return 0;
+            })
             $scope.displayedBars = $scope.bars;
         });
+        $scope.hunts = [];
+        HuntService.getHunts().then( function(response){
+            $scope.hunts = response;
+        });
+        $scope.siblingHunt="";
         //   Initialisation du booléen de pression
         $scope.pressureBeer = false;
         //   Initialisation du prix de la chasse
@@ -40,7 +63,7 @@ angular.module('BeerClient.controllers')
         }
         $scope.updateListBeer = function(beerTyped){
             $scope.displayedBeers = $scope.beers.filter( function(beer) {
-                if(beer.toLowerCase().indexOf(beerTyped.toLowerCase()) !== -1 ) return true;
+                if(beer.name.toLowerCase().indexOf(beerTyped.toLowerCase()) !== -1 ) return true;
             })
         }
         $scope.selectBeer = function(beer){
@@ -66,7 +89,7 @@ angular.module('BeerClient.controllers')
         }
         $scope.updateListBar = function(barTyped){
             $scope.displayedBars = $scope.bars.filter( function(bar) {
-                if(bar.toLowerCase().indexOf(barTyped.toLowerCase()) !== -1 ) return true;
+                if(bar.name.toLowerCase().indexOf(barTyped.toLowerCase()) !== -1 ) return true;
             })
         }
         $scope.selectBar = function(bar){
@@ -80,8 +103,21 @@ angular.module('BeerClient.controllers')
 
 
         //validation
-        $scope.hunt = function(isPressure, beer, beers, bar, price){
-            if(beer==null){
+        $scope.hunt = function(isPressure, beer, bar, price){
+            $scope.siblingHunt="";
+            $scope.hunts.forEach(function (element, index, array){
+                console.log("pression : "+ element.isPressure);
+                console.log("pression postée :"+isPressure);
+                if(element.beer.split('/')[3]==beer.id){
+                    if(element.bar.split('/')[3]==bar.id){
+                        if(element.isPressure==isPressure){
+                            console.log('ici ça marche pas');
+                            $scope.siblingHunt=element['@id'];
+                        }
+                    }
+                }
+            });
+            if(beer.name==null){
                 $scope.infoMessage="";
                 $scope.errorMessage="Vous devez sélectionner une bière !"
             }else if(bar==null){
@@ -90,6 +126,20 @@ angular.module('BeerClient.controllers')
             }else if(price.length>5 || price==0 || price.match(/[a-z]/i) || price.split(".").length-1>1 || price.split(",").length-1>1 || (price.indexOf('.')!=-1 && price.indexOf(',')!=-1)){
                 $scope.infoMessage="";
                 $scope.errorMessage="Le prix de votre bière est incorrect !"
+            }else if($scope.siblingHunt!=""){
+
+                var confirmPopup = $ionicPopup.confirm({
+                    title: 'Cette chasse existe déjà !',
+                    template: 'Souhaitez-vous accéder à la fiche de celle-ci?'
+                });
+
+                confirmPopup.then(function(res) {
+                    if(res) {
+                        $state.go('app.consultHunt/:huntId', { huntId: $scope.siblingHunt.split('/')[3]});
+                    } else {
+                    }
+                });
+
             }else{
                 var priceToPost;
                 if(price.indexOf('.')==-1){
@@ -108,7 +158,8 @@ angular.module('BeerClient.controllers')
                 }else{
                     priceToPost=price+" ";
                 }
-                HuntService.post_Hunt(isPressure, beer, $scope.beers, bar, $scope.bars, priceToPost).then(function(response){
+
+                HuntService.post_Hunt(isPressure, beer.id, bar.id, priceToPost).then(function(response){
                     $scope.beerSelected="";
                     $scope.barSelected="";
                     $scope.pressureBeer=false;

@@ -12,13 +12,13 @@
 
 
             <ion-md-input id="hunt-beer-field" placeholder="Sélectionnez une bière..." highlight-color="stable" type="text" ng-model="beerTyped" ng-click="displayBeerAutocomplete()" ng-change="updateListBeer(beerTyped)" ng-hide="beerSelected"></ion-md-input>
-            <p id="hunt-beer-label" ng-show="beerSelected" >{{beerSelected}}  <span id="hunt-beer-reset" class="glyphicon glyphicon-remove-sign" ng-show="beerSelected" ng-click="resetBeerField()"></span></p>
+            <p id="hunt-beer-label" ng-show="beerSelected" >{{beerSelected.name}}  </p><span id="hunt-beer-reset" class="glyphicon glyphicon-remove-sign" ng-show="beerSelected" ng-click="resetBeerField()"></span>
 
             <ion-scroll id="beerAutocomplete" direction="y" ng-show="beerAutocomplete==true">
                 <ul>
                     <li >
                         <ion-item id="hunt-beer-item" ng-repeat="beer in displayedBeers" ng-click="selectBeer(beer)">
-                            {{beer}}
+                            {{beer.name}}
                         </ion-item>
                     </li>
                 </ul>
@@ -27,13 +27,13 @@
 
 
             <ion-md-input id="hunt-bar-field" placeholder="Sélectionnez un bar..." highlight-color="stable" type="text" ng-model="barTyped" ng-click="displayBarAutocomplete()" ng-change="updateListBar(barTyped)" ng-hide="barSelected"></ion-md-input>
-            <p id="hunt-bar-label" ng-show="barSelected">{{barSelected}} <span id="hunt-bar-reset"class="glyphicon glyphicon-remove-sign" ng-show="barSelected" ng-click="resetBarField()"></span></p>
+            <p id="hunt-bar-label" ng-show="barSelected">{{barSelected.name}} </p><span id="hunt-bar-reset"class="glyphicon glyphicon-remove-sign" ng-show="barSelected" ng-click="resetBarField()"></span>
 
             <ion-scroll id="barAutocomplete" direction="y" ng-show="barAutocomplete==true">
                 <ul>
                     <li >
                         <ion-item id="hunt-bar-item" ng-repeat="bar in displayedBars" ng-click="selectBar(bar)">
-                            {{bar}}
+                            {{bar.name}}
                         </ion-item>
                     </li>
                 </ul>
@@ -46,6 +46,6 @@
 
         </div>
 
-        <div id="hunt-submit-button" ng-click="hunt(pressureBeer, beerSelected, beers, barSelected, price)">Valider</div>
+        <div id="hunt-submit-button" ng-click="hunt(pressureBeer, beerSelected, barSelected, price)">Valider</div>
     </ion-content>
 </ion-view>
