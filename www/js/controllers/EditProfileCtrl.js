@@ -5,27 +5,36 @@ angular.module('BeerClient.controllers')
     }else{
         $scope.infoMessage="Ici éditez votre profil";
         $scope.errorMessage="";
+        
+        $scope.data=[];
+        $scope.data.description=$rootScope.userConnected.biography;
+        $scope.data.dateOfBirth= new Date($rootScope.userConnected.dateOfBirth);
 
 
 
         $scope.edit = function(data){
-            var reg= /!^(0?\d|[12]\d|3[01])-(0?\d|1[012])-((?:19|20)\d{2})$!/;
+            var mdpAlreadyUpdated = false;
 
-            if(reg.test(data.dateOfBirth) || data.dateOfBirth==null){
-                if(data.newPass==data.confirm){
-                    EditProfileService.editProfile(data.description, data.dateOfBirth, data.oldPass, data.newPass, $rootScope.userConnected['@id']).then(function(response){
-
-
-
-                    });
+            EditProfileService.editProfile(data.description, data.dateOfBirth, $rootScope.userConnected['@id']).then(function(response){
+                if(data.newPass=="" && data.confirm=="" && data.oldPass==""){
+                    if(data.newPass==data.confirm){
+                        EditProfileService.updatePass(data.oldPass, data.newPass, $rootScope.userConnected['@id']).then(function(response){
+                            if(response=="incorrect"){
+                                $scope.infoMessage="";
+                                $scope.errorMessage="Votre ancien mot de passe est incorrect";
+                            }else{
+                                $state.go('app.hunter/:hunterId', { hunterId: $rootScope.userConnected['@id'].split('/')[3]});
+                            }
+                        });
+                    }else{
+                        $scope.infoMessage="";
+                        $scope.errorMessage="Confirmez le mdp";
+                    }
                 }else{
-                    $scope.infoMessage="";
-                    $scope.errorMessage="Confirmez le mdp";
+                    $state.go('app.hunter/:hunterId', { hunterId: $rootScope.userConnected['@id'].split('/')[3]});
                 }
-            }else{
-                $scope.infoMessage="";
-                $scope.errorMessage="Date de naissance incorrecte";
-            }
+            })
+
         }
     }
 

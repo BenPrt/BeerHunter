@@ -130,6 +130,7 @@ angular.module('BeerClient.services')
                 var returnValue =[];
                 response.data.forEach(function(element,index,array){
                     var returnItem = {};
+                    returnItem.id=element.bar.id;
                     returnItem.name=element.bar.name;
                     returnItem.latitude=element.bar.latitude;
                     returnItem.longitude=element.bar.longitude;

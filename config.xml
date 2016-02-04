@@ -13,6 +13,7 @@
     <preference name="webviewbounce" value="false"/>
     <preference name="UIWebViewBounce" value="false"/>
     <preference name="DisallowOverscroll" value="true"/>
+    <preference name="SplashScreen" value="none"/>
     <preference name="android-minSdkVersion" value="16"/>
     <preference name="BackupWebStorage" value="none"/>
     <feature name="StatusBar">

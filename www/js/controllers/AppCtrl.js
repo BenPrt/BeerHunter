@@ -1,6 +1,7 @@
 angular.module('BeerClient.controllers')
 
-    .controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $rootScope, AuthService) {
+    .controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $rootScope, AuthService, LevelService) {
+    
     if($rootScope.isAuth==false || $rootScope.isAuth==null){
         $state.go('login');
     }

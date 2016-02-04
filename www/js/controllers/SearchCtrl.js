@@ -7,6 +7,8 @@ angular.module('BeerClient.controllers')
         $state.go('login');
         console.log("Access denied");
     } else{
+        $scope.searchTyped="";
+        
         // Récupération des données pour la recherche
         //   Récupération des bières
         $scope.beers = [];
@@ -65,8 +67,8 @@ angular.module('BeerClient.controllers')
 
         $scope.selectResult = function(result){
             if($scope.selectedTab=="beer"){
-                console.log("redirection vers la bière");
                 SearchService.getBeerFromName(result).then(function (response){
+                    $scope.searchTyped="";
                     $scope.beerToLoad= response;
                     var id =response['@id'];
                     tmp= id.split('/');
@@ -74,7 +76,7 @@ angular.module('BeerClient.controllers')
                     $state.go('app.beer/:beerId', { beerId: id});
                 });
             }else if($scope.selectedTab=="bar"){
-                console.log("redirection vers la bière");
+                $scope.searchTyped="";
                 SearchService.getBarFromName(result).then(function (response){
                     $scope.barToLoad= response;
                     var id =response['@id'];
@@ -83,7 +85,7 @@ angular.module('BeerClient.controllers')
                     $state.go('app.bar/:barId', { barId: id});
                 });
             }else if($scope.selectedTab=="hunter"){
-                console.log("redirection vers le chasseur");
+                $scope.searchTyped="";
                 SearchService.getHunterFromUsername(result).then(function (response){
                     $scope.hunterToLoad= response;
                     var id =response['@id'];

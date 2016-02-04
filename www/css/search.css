@@ -37,3 +37,6 @@
 #search-result ion-item{
     background-color : #DBBC8A;
 }
+#search-result ion-item:active{
+    background-color : beige;
+}

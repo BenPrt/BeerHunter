@@ -215,9 +215,9 @@ angular.module('BeerClient.controllers')
                     markers.push(marker);
                     marker.setMap(map);
 
-                    if(element.hunts.length>1){
+                    if(element.hunts>1){
                         var infowindow = new google.maps.InfoWindow({
-                            content:"<h4>"+element.name + "</h4>" +element.hunts.length+" chasses enregistrées"
+                            content:"<a id='map-overlay-link' href='#/app/bar/"+ element.id +"' ><h4>"+element.name + "</h4></a>" +element.hunts+" chasses enregistrées"
                         });
                     }else{
                         var infowindow = new google.maps.InfoWindow({
@@ -251,6 +251,10 @@ angular.module('BeerClient.controllers')
                 markers.pop().setMap(null);
             }
             markers.length=0;
+        }
+        
+        $scope.redirectToBar= function(id){
+            console.log(id);
         }
 
         MapService.getHuntedBars().then( function(response){

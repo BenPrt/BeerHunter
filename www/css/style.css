@@ -24,15 +24,26 @@ ul
     height : 60px;
 }
 #sideMenuTitle{
+    font-size : 23px;
     padding-top : 8px;
     padding-left : 13px;
 }
 .sideMenuContent{
     padding-top : 17px;
-    background-color : #d2a959;
+    background-color : #DBBC8A;
+}
+#menu-user-icon{
+    padding-right : 3%;
+}
+#menu-level-icon{
+    padding-left : 5%;
+    padding-right : 2%;
 }
 .item-complex .item-content, .item{
-    background-color : #d2a959;
+    background-color : #DBBC8A;
+}
+.item-complex .item-content:active, .item:active{
+    background-color : beige;
 }
 #burgerIcon{
     padding-top : 8px; 

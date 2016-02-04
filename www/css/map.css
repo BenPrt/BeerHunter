@@ -9,6 +9,12 @@
     padding-bottom : 2%;
     height : 39%;
 }
+#map-overlay-link{
+    color : black;
+}
+#map-overlay-link:visited{
+    color : black;
+}
 #map-overlay{
     width :100%;
     height : 270%;
@@ -53,7 +59,8 @@
 
 
 #map-filters-scroll{
-    height : 65%;
+    height : 69%;
+    background-color: #DBBC8A;
 }
 #map-color-filter{
     margin-top : 3%;
