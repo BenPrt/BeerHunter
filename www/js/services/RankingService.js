@@ -12,7 +12,7 @@ angular.module('BeerClient.services')
                 }
             }).then(function successCallback(response) {
                 var returnValue =[];
-                console.log(response.data['hydra:member']);
+                
                 response.data['hydra:member'].forEach(function(element,index,array){
                     var returnItem = {};
                     returnItem.id=element['@id'].split('/')[3];
@@ -21,7 +21,8 @@ angular.module('BeerClient.services')
                     returnItem.potentiel=parseInt(element.potentialScore - element.validScore);
                     returnValue.push(returnItem);
                 });
-                console.log(returnValue);
+                
+                // Tri du classement selon un ordre de points décroissant 
                 returnValue.sort(function(a, b) {
                     if(a.validScore>b.validScore){
                         return -1;
@@ -36,7 +37,6 @@ angular.module('BeerClient.services')
                     }
                     return 0;
                 });
-                console.log(returnValue);
                 return returnValue;
             }, function errorCallback(response) {
                 var alertPopup = $ionicPopup.alert({

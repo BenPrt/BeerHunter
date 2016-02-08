@@ -2,7 +2,7 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
 
     .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
-        // Stuff in here
+        
     });
 })
 
@@ -24,6 +24,7 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
         }
     })
 
+    
         .state('signin', {
         url: '/signin',
         templateUrl: 'templates/signin.html',
@@ -37,6 +38,7 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
         }
     })        
 
+    
         .state('app', {
         url: '/app',
         abstract: true,
@@ -51,6 +53,7 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
         }
     })
 
+    
         .state('app.map', {
         url: '/map',
         views: {
@@ -68,6 +71,7 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
         }
     })
 
+    
         .state('app.hunt', {
         url: '/hunt',
         views: {
@@ -85,6 +89,7 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
         }
     })
 
+    
         .state('app.search',{
         url: '/search',
         views: {
@@ -98,12 +103,11 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
                         $state.go('login');
                     }
                 }
-
-
             }
         }
     })
 
+    
         .state('app.beer/:beerId',{
         url: '/beer/:beerId',
         views: {
@@ -117,12 +121,11 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
                         $state.go('login');
                     }
                 }
-
-
             }
         }
     })
 
+    
         .state('app.bar/:barId',{
         url: '/bar/:barId',
         views: {
@@ -136,12 +139,11 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
                         $state.go('login');
                     }
                 }
-
-
             }
         }
     })
 
+    
         .state('app.hunter/:hunterId',{
         url: '/hunter/:hunterId',
         views: {
@@ -155,12 +157,11 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
                         $state.go('login');
                     }
                 }
-
-
             }
         }
     })
 
+    
     .state('app.huntList',{
         url: '/huntList',
         views: {
@@ -180,6 +181,7 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
         }
     })
     
+    
         .state('app.consultHunt/:huntId',{
         url: '/consultHunt/:huntId',
         views: {
@@ -193,12 +195,11 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
                         $state.go('login');
                     }
                 }
-
-
             }
         }
     })
 
+    
         .state('app.editProfile',{
         url: '/editProfile',
         views: {
@@ -212,12 +213,11 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
                         $state.go('login');
                     }
                 }
-
-
             }
         }
     })
 
+    
     .state('app.ranking',{
         url: '/ranking',
         views: {
@@ -231,8 +231,6 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
                         $state.go('login');
                     }
                 }
-
-
             }
         }
     })

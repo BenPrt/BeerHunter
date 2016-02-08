@@ -1,9 +1,6 @@
 var app = angular.module('BeerClient.directives', []);
 
-/**
- * Handle Google Maps API V3+
- */
-// - Documentation: https://developers.google.com/maps/documentation/
+// Directive chargée de l'affichage de la map
 app.directive("appMap", function ($window) {
     return {
         restrict: "E",

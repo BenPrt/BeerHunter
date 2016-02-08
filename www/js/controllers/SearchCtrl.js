@@ -8,7 +8,7 @@ angular.module('BeerClient.controllers')
         console.log("Access denied");
     } else{
         $scope.searchTyped="";
-        
+
         // Récupération des données pour la recherche
         //   Récupération des bières
         $scope.beers = [];
@@ -31,24 +31,21 @@ angular.module('BeerClient.controllers')
         });
 
 
-
         // Initialisation et méthode de récupération des valeurs des tabs
         $scope.selectedTab = "";
         $scope.displayedResults=$scope.beers;
         $scope.selectTab = function(value){
             $scope.selectedTab=value;
+            $scope.searchTyped="";
             if($scope.selectedTab=="beer"){
                 $scope.displayedResults=$scope.beers;
                 $scope.displayedList = $scope.displayedResults;
-                $scope.updateResultList($scope.searchTyped);
             }else if($scope.selectedTab=="bar"){
                 $scope.displayedResults=$scope.bars;
                 $scope.displayedList = $scope.displayedResults;
-                $scope.updateResultList($scope.searchTyped);
             }else if($scope.selectedTab=="hunter"){
                 $scope.displayedResults=$scope.hunters;
                 $scope.displayedList = $scope.displayedResults;
-                $scope.updateResultList($scope.searchTyped);
             }else{
                 var alertPopup = $ionicPopup.alert({
                     title: 'Erreur',
@@ -58,13 +55,15 @@ angular.module('BeerClient.controllers')
         }
 
 
+        // Fonction chargée de mettre à jour l'autocomplétion selon la chaîne entrée par l'utilisateur
         $scope.updateResultList = function(searchTyped){
             $scope.displayedResults = $scope.displayedList.filter( function(result) {
                 if(result.toLowerCase().indexOf(searchTyped.toLowerCase()) !== -1 ) return true;
             });
         }
 
-
+        
+        // Fonction chargée de la redirection vers le résultat sélectionné
         $scope.selectResult = function(result){
             if($scope.selectedTab=="beer"){
                 SearchService.getBeerFromName(result).then(function (response){
@@ -95,10 +94,6 @@ angular.module('BeerClient.controllers')
                 });
             }
         }
-
-
-
-
 
     }
 })

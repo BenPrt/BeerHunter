@@ -39,11 +39,13 @@ console.log("AuthService");
             });
         },
 
+        
+        // Fonction chargée de retourner le statut de l'authentification de l'utilisateur utilisatn l'application
         isConnected: function() {
-            // faire requête get pour statut de la session
             return $rootScope.isAuth;
         },
 
+        // Fonction chargée de déconnecter l'utilisateur courant
         logoutUser: function(){
             $rootScope.isAuth = false ;
             $rootScope.userConnected = "";

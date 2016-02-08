@@ -97,6 +97,7 @@ angular.module('BeerClient.services')
         },
 
         getBarsFromFilters:function(beerName, color, origin, isPressure, priceMin, priceMax, degreeMin, degreeMax, status){
+            // Construction de la requête en fonction des filtres passés en paramètres
             var valuesToPost ={};
             if(beerName!=""){
                 valuesToPost.beer=parseInt(beerName.split('/')[3]);

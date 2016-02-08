@@ -72,14 +72,13 @@ angular.module('BeerClient.services')
         },
 
         post_Hunt: function(isPressure, beer, bar, price) {
+            // Contruction des données à envoyer au serveur
             var beerToPost = '/api/beers/'+beer;
-
             var barToPost = '/api/bars/'+bar;
-
             hunterToPost = $rootScope.userConnected['@id'];
-
             var priceToPost = parseFloat(price);
 
+            // Définition des paramètres de la requête
             var config = {headers:{
                 'Content-Type': 'application/json',
                 'Authorization':'Bearer '+$rootScope.tokenSession
@@ -94,12 +93,11 @@ angular.module('BeerClient.services')
             }), config)
                 .then(function successCallBack(response){
 
+                // Une fois la chasse postée, on ajoute 15 points au potentiel du chasseur
                 var potentialScoreToPut = $rootScope.userConnected.potentialScore+15;
-
                 var hunterValuesToPUT ={
                     potentialScore : potentialScoreToPut
                 }
-
                 $http.put('http://beer.sinjo.xyz'+$rootScope.userConnected['@id'], JSON.stringify(hunterValuesToPUT), config)
                     .then(function successCallBack(response){
                     var alertPopup = $ionicPopup.alert({
@@ -114,9 +112,7 @@ angular.module('BeerClient.services')
                     });
                 })
 
-            },function errorCallback(response){
-
-            });
+            },function errorCallback(response){});
         }
     }
 });

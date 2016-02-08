@@ -1,8 +1,6 @@
 var app = angular.module('BeerClient.controllers',[]);
 
-/**
- * A google map / GPS controller.
- */
+// Contrôleur à part, chargé de gérer l'élément map de l'application
 app.controller('GpsCtrl', ['$scope','$ionicPlatform', '$location',function($scope, $ionicPlatform, $location) {
 
     // init gps array

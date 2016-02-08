@@ -8,6 +8,7 @@ angular.module('BeerClient.controllers')
         //   Initialisation des messages
         $scope.infoMessage="Veuillez renseigner les champs suivants : ";
         $scope.errorMessage="";
+        
         //   Récupération des bières
         $scope.beers = [];
         HuntService.getBeers().then( function(response){
@@ -23,6 +24,7 @@ angular.module('BeerClient.controllers')
             })
             $scope.displayedBeers = $scope.beers;
         });
+        
         //   Récupération des bars
         $scope.bars = [];
         HuntService.getBars().then( function(response){
@@ -47,7 +49,6 @@ angular.module('BeerClient.controllers')
         $scope.pressureBeer = false;
         //   Initialisation du prix de la chasse
         $scope.price = "";
-
 
 
         // Fonctions d'affichage ou non de l'autocomplete pour les bières
@@ -101,22 +102,21 @@ angular.module('BeerClient.controllers')
         }
 
 
-
-        //validation
         $scope.hunt = function(isPressure, beer, bar, price){
             $scope.siblingHunt="";
+            // Vérification que la chasse n'existe pas déjà
             $scope.hunts.forEach(function (element, index, array){
-                console.log("pression : "+ element.isPressure);
-                console.log("pression postée :"+isPressure);
                 if(element.beer.split('/')[3]==beer.id){
                     if(element.bar.split('/')[3]==bar.id){
                         if(element.isPressure==isPressure){
-                            console.log('ici ça marche pas');
                             $scope.siblingHunt=element['@id'];
                         }
                     }
                 }
             });
+            
+            
+            // Gestion et feedback des erreurs
             if(beer.name==null){
                 $scope.infoMessage="";
                 $scope.errorMessage="Vous devez sélectionner une bière !"
@@ -159,6 +159,7 @@ angular.module('BeerClient.controllers')
                     priceToPost=price+" ";
                 }
 
+                // Exécution de la requête
                 HuntService.post_Hunt(isPressure, beer.id, bar.id, priceToPost).then(function(response){
                     $scope.beerSelected="";
                     $scope.barSelected="";

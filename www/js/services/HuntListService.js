@@ -8,6 +8,7 @@ angular.module('BeerClient.services')
                 .then(function successCallBack(response){
                 var returnValue =[];
                 response.data.forEach(function(element,index,array){
+                    // On construit un objet avec les ressources nécessaires
                     var returnItem = {};
                     returnItem.id=element.id;
                     returnItem.bar=element.bar.name;

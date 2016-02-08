@@ -6,6 +6,7 @@ angular.module('BeerClient.services')
         getLevel: function(score) {
             var level=0;
             if(score>0){
+                // Définition des paliers de niveaux
                 if(score<20)level=1; 
                 if(score>19 && score<40)level=2
                 if(score>39 && score<80)level=3

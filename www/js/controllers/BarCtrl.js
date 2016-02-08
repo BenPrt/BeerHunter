@@ -3,21 +3,22 @@ angular.module('BeerClient.controllers')
     if($rootScope.isAuth==false || $rootScope.isAuth==null){
         $state.go('login');
     }else{
-        console.log($stateParams.barId);
         $scope.barId= $stateParams.barId;
         $scope.finishedHunts=[];
         $scope.pendingHunts=[];
 
 
-
+        // On récupère l'objet du bar depuis l'id passé en paramètre
         BarService.getBarFromId($scope.barId).then(function (response){
             $scope.bar=response;
-            console.log($scope.bar);
 
+            
+            //Pour chaque chasse de ce bar...
             $scope.bar.hunts.forEach(function (element, index, array){
                 var huntToAdd=[];
 
-                //Récupération de l'objet chasse
+                
+                //Récupération de l'objet chasse correspondant
                 tmp=element.split("/");
                 huntId=tmp[3];
                 BarService.getHuntFromId(huntId).then(function (response){
@@ -25,15 +26,14 @@ angular.module('BeerClient.controllers')
                     var huntGot = response;
 
 
-                    //Récupération de la bière de la chasse
+                    //Récupération de la bière de chacun de ces chasses
                     tmp=response.beer.split("/");
                     beerId=tmp[3];
                     BarService.getBeerFromId(beerId).then(function (response){
                         var beerGot= response;
 
 
-
-                        //Récupération du chasseur de la chasse
+                        //Récupération du chasseur de la chasse pour l'afficher ensuite dans l'item de la chasse du bar
                         tmp=hunterId.split("/");
                         hunterIdent=tmp[3];
                         BarService.getHunterFromId(hunterIdent).then(function (response){
@@ -43,7 +43,6 @@ angular.module('BeerClient.controllers')
                             huntToAdd.splice(2,0,response.username);
 
 
-                            console.log(huntToAdd);
                             if(huntGot.status==1){
                                 $scope.finishedHunts.splice(index, 0, huntToAdd);
                             }else if(huntGot.status==0){
@@ -56,14 +55,10 @@ angular.module('BeerClient.controllers')
             })
         })
         
+        // Fonction de redirection vers une chasse si l'user clique sur un de ces items
         $scope.goToHunt=function(huntId){
             $state.go('app.consultHunt/:huntId', { huntId: huntId});
         }
-
-
-
-
-
 
 
     }

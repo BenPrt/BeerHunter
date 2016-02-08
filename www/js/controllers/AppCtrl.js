@@ -2,6 +2,7 @@ angular.module('BeerClient.controllers')
 
     .controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $rootScope, AuthService, LevelService) {
     
+    // Gestion des redirections selon le clic sur l'item du menu
     if($rootScope.isAuth==false || $rootScope.isAuth==null){
         $state.go('login');
     }
