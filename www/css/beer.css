@@ -30,7 +30,7 @@
 }
 
 #beer-origin-label{
-    margin-top : -4%;
+    margin-top : 0%;
     font-size : 16px;
     margin-left : 45%;
 }
@@ -56,6 +56,7 @@
     margin-bottom : -1%;
 }
 #beer-hunts-label{
+    margin-left : 4%;
     padding-top : 5%;
     color : saddlebrown;
 }

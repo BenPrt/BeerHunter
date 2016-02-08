@@ -2,8 +2,8 @@ angular.module('BeerClient.controllers')
 
     .controller('LoginCtrl', function($scope, $state, $ionicPopup, $ionicPlatform, $rootScope, AuthService) {
     $scope.data = {};
+    $rootScope=$rootScope.$new(true);
 
-    
     // Si l'utilisateur essaye d'accéder à la page de login en étant déjà authentifié il est redirigé vers la carte
     if($rootScope.isAuth==true){
         $state.go('app.map');

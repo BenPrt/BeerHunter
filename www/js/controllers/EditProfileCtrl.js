@@ -11,8 +11,9 @@ angular.module('BeerClient.controllers')
         // Récupération des données déjà renseignées
         $scope.data=[];
         $scope.data.description=$rootScope.userConnected.biography;
-        $scope.data.dateOfBirth= new Date($rootScope.userConnected.dateOfBirth);
-
+        if($rootScope.userConnected.dateOfBirth!=""){
+            $scope.data.dateOfBirth= new Date($rootScope.userConnected.dateOfBirth);
+        }
 
 
         $scope.edit = function(data){
@@ -36,7 +37,7 @@ angular.module('BeerClient.controllers')
                             }
                         });
 
-                        // Feedback des erreurs
+                        // Feedback d'erreur
                     }else{
                         $scope.infoMessage="";
                         $scope.errorMessage="Mot de passe à confirmer";

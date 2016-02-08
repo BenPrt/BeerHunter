@@ -13,20 +13,17 @@ angular.module('BeerClient.services')
 
             if(description!=""){
                 valuesToPut.biography=description;
-                console.log("description : "+ description);
             }
 
             if(dateOfBirth!=""){
                 valuesToPut.dateOfBirth=dateOfBirth;
-                console.log("dateOfBirth : "+ dateOfBirth);
             }
 
             return $http.put('http://beer.sinjo.xyz'+id, JSON.stringify(valuesToPut), config)
                 .then(function successCallBack(response){
-                console.log('édition terminée');
             },function errorCallback(response){ 
-                console.log("édition failed")});
 
+            })
         },
 
 

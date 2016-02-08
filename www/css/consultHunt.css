@@ -19,20 +19,19 @@
 }
 #consultHunt-rightDiv{
     float : right ;
-    margin-top : 5.5%;
-    margin-right : 5.5%;
+    margin-top : 7%;
+    margin-right : 8%;
 }
-#consultHunt-rightDiv h4 h3{
+#consultHunt-rightDiv h4{
     margin-top : -3%;
-    width : 92%;
+    width : 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-#consulthunt-rightDiv p{
-    margin-top : -5%;
-    margin-left : 2.5%;
-    width : 92%;
+#consultHunt-rightDiv h3{
+    margin-top : -3%;
+    width : 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -121,9 +120,10 @@
     font-size : 14px;
     text-align: center;
     color : white;
-    margin-top : 12%;
+    margin-top : 8%;
 }
 #consultHunt-unavailable-button{
+    width : 100%;
     float:right;
     text-align : center;
     font-size : 19px;
