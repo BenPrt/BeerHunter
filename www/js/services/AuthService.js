@@ -26,7 +26,7 @@ console.log("AuthService");
                 }, function errorCallback(response) {    
                     var alertPopup = $ionicPopup.alert({
                         title: 'Erreur',
-                        template: 'Erreur de récupération des données, si elle perdure, veuillez contacter un administrateur.'
+                        template: 'Vos informations sont erronées, ou le serveur ne répond pas. Si cette erreur perdure, veuillez contacter un administrateur.'
                     });
                 });
                 return response;

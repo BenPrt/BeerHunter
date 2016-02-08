@@ -221,7 +221,7 @@ angular.module('BeerClient.controllers')
                         });
                     }else{
                         var infowindow = new google.maps.InfoWindow({
-                            content:"<h4>"+element.name + "</h4>Une chasse enregistrée"
+                           content:"<a id='map-overlay-link' href='#/app/bar/"+ element.id +"' ><h4>"+element.name + "</h4></a>Une chasse enregistrée"
                         }); 
                     }
                     google.maps.event.addListener(marker,'click',function() {

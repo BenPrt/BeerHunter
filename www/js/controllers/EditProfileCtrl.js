@@ -22,13 +22,16 @@ angular.module('BeerClient.controllers')
             EditProfileService.editProfile(data.description, data.dateOfBirth, $rootScope.userConnected['@id']).then(function(response){
 
                 // Et si les champs d'ancien, de nouveau et de confirmation de mot de passe sont renseignés, il appelle la requête associée
-                if(data.newPass=="" && data.confirm=="" && data.oldPass==""){
+                if(data.newPass!="" && data.confirm!="" && data.oldPass!=""){
                     if(data.newPass==data.confirm){        
                         EditProfileService.updatePass(data.oldPass, data.newPass, $rootScope.userConnected['@id']).then(function(response){
+                            data.oldPass="";
+                            data.newPass="";
+                            data.confirm="";
                             if(response=="incorrect"){
                                 $scope.infoMessage="";
                                 $scope.errorMessage="Votre ancien mot de passe est incorrect";
-                            }else{
+                            }else if(response=="OK"){
                                 $state.go('app.hunter/:hunterId', { hunterId: $rootScope.userConnected['@id'].split('/')[3]});
                             }
                         });
@@ -36,9 +39,13 @@ angular.module('BeerClient.controllers')
                         // Feedback des erreurs
                     }else{
                         $scope.infoMessage="";
-                        $scope.errorMessage="Confirmez le mdp";
+                        $scope.errorMessage="Mot de passe à confirmer";
                     }
                 }else{
+                    var alertPopup = $ionicPopup.alert({
+                        title: 'Félicitations !',
+                        template: 'Vos informations ont été mises à jour, mais pas votre mot de passe !'
+                    });
                     $state.go('app.hunter/:hunterId', { hunterId: $rootScope.userConnected['@id'].split('/')[3]});
                 }
             })

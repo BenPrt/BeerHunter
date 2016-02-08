@@ -40,8 +40,9 @@ angular.module('BeerClient.services')
                 .then(function successCallBack(response){
                 var alertPopup = $ionicPopup.alert({
                     title: 'Félicitations !',
-                    template: 'Vos informations ont été mises à jour!'
+                    template: 'Vos informations et votre mot de passe ont été mises à jour!'
                 });
+                return "OK";
             },function errorCallback(response){
                 if(response.status==482){
                     return "incorrect";

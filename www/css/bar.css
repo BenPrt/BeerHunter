@@ -1,5 +1,6 @@
 /*Style de la page de consultation d'un bar*/
 #bar-container{
+    float : left;
     margin-top : 10.5%;
     background-color : #DBBC8A;
     width : 90%;
@@ -11,22 +12,25 @@
     padding-bottom : 7%;
 }
 #bar-icon{
-    width : 30%;
-    height : auto;
-    margin-top : %;
-    margin-left : 5%;
+    width : 35%;
+    margin-left : 30%;
 }
 #bar-name-label{
-    margin-left : 6%;
+    text-align: center;
 }
 #bar-address-label{
-    float:right;
-    margin-top : 12%;
-    margin-right : 1%;
+    margin-top : 4%;
+    color : saddlebrown;
+    margin-left : 4%;
 }
-#bar-address-label p{
+#bar-address-firstLine{
+    margin-bottom : 0%;
+    margin-left : 2%;
     font-size : 14px;
-    margin-top :-5%;
+}
+#bar-address-secondLine{
+    margin-left : 2%;
+    font-size : 14px;
 }
 #bar-description-label{
     margin-top : 14%;
@@ -34,7 +38,8 @@
     margin-left : 4%;
 }
 #bar-separator{
-    margin-top : -2.5%;
+    margin-top : -3%;
+    width : 98%;
     border-color : saddlebrown;
     margin-bottom : 2.2%;
 }

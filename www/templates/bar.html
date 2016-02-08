@@ -4,10 +4,10 @@
 
             <h2 id="bar-name-label">{{bar.name}}</h2>
             <img src="img/bar-icon.png" id="bar-icon"/>
-            <div id="bar-address-label">
-                <p>{{bar.address}}</p>
-                <p>{{bar.postal}} {{bar.city}}</p>
-            </div>
+            <p id="bar-address-label">Adresse</p>
+            <hr id="bar-separator">
+            <p id="bar-address-firstLine">{{bar.address}}</p>
+            <p id="bar-address-secondLine">{{bar.postal}} {{bar.city}}</p>
             <p id="bar-description-label" ng-show="bar.description">Description</p>
             <hr id="bar-separator" ng-show="bar.description">
             <p id="bar-description">{{bar.description}}</p>
