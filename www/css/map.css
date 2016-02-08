@@ -2,9 +2,9 @@
 #map-filter-container{
     float:left;
     margin-top : 6.5%;
-    margin-left : 4%;
-    padding-top : 0.5%;
-    width : 92%;
+    margin-left : 1.5%;
+    padding-top : 0.2%;
+    width : 97%;
     background-color : #DBBC8A;
     padding-bottom : 2%;
     height : 39%;
@@ -59,52 +59,59 @@
 
 
 #map-filters-scroll{
-    height : 69%;
-    background-color: #DBBC8A;
+    margin-top : 1.5%;
+    height : 66%;
+    width : 96%;
+    margin-left : 2%;
+    background-color: #CCAF81;
+    box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;
 }
 #map-color-filter{
-    margin-top : 3%;
-    background-color: #DBBC8A;
+    margin-top : 4.5%;
     border : none;
-    width : 99%;
-    margin-left : 0.5%;
+    width : 95%;
+    margin-left : 2.5%;
+    background-color: transparent;
 }
 #map-color-filter-select{
     margin-right : 1%;
     width : 48%;
-    background-color: #D1B17D;
+    background-color: #CF9E66;
 }
 
 #map-origin-filter{
-    margin-top : 2%; 
+    margin-top : 3%; 
     border:none;
     background-color: #DBBC8A;
     border : none;
-    width : 99%;
-    margin-left : 0.5%;
+    width : 95%;
+    margin-left : 2.5%;
+    background-color: transparent;
 }
 #map-origin-filter-select{
     margin-right : 1%;
     width : 48%;
-    background-color: #D1B17D;
+    background-color: #CF9E66;
 }
 
 #map-degree-filter{
-    margin-top : 2%; 
+    margin-top : 3%; 
     border:none;
     background-color: #DBBC8A;
     border : none;
-    width : 99%;
-    margin-left : 0.5%;
+    width : 95%;
+    margin-left : 2.5%;
+    background-color: transparent;
 }
 #map-degree-filter-select{
     margin-right : 1%;
-    width : 53%;
-    background-color: #D1B17D;
+    width : 51%;
+    background-color: #CF9E66;
+    font-size : 13px;
 }
 
 #map-pressure-filter{
-    background-color: #DBBC8A;
+    background-color: transparent;
     border : none;
     width : 93%;
     margin-top : 1%;
@@ -115,27 +122,27 @@
 #map-price-filter{
     margin-top : 2%; 
     border:none;
-    background-color: #DBBC8A;
+    background-color: transparent;
     border : none;
     width : 99%;
 }
 #map-price-filter-select{
     margin-right : 1%;
     width : 48%;
-    background-color: #D1B17D;
+    background-color: #CF9E66;
 }
 
 #map-status-filter{
-    margin-top : 2%; 
+    margin-top : 3%; 
     border:none;
-    background-color: #DBBC8A;
     border : none;
     width : 99%;
+    background-color: transparent;
 }
 #map-status-filter-select{
     margin-right : 1%;
     width : 48%;
-    background-color: #D1B17D;
+    background-color: #CF9E66;
 }
 
 
