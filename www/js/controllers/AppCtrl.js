@@ -48,7 +48,7 @@ angular.module('BeerClient.controllers')
 
     $scope.logout = function() {
         AuthService.logoutUser;
-        $state.reload();
+        $ionicHistory.clearHistory();
         $state.go('login');
     }
 })

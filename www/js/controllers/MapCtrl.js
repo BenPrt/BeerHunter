@@ -5,7 +5,7 @@ angular.module('BeerClient.controllers')
     if($rootScope.isAuth ==false || $rootScope.isAuth==null){
         $state.go('login');
     } else{
-
+        
         $scope.mapCreated = function(map) {
             $scope.map = map;
         };

@@ -11,9 +11,7 @@ angular.module('BeerClient.controllers')
         // Récupération des données déjà renseignées
         $scope.data=[];
         $scope.data.description=$rootScope.userConnected.biography;
-        if($rootScope.userConnected.dateOfBirth!=""){
-            $scope.data.dateOfBirth= new Date($rootScope.userConnected.dateOfBirth);
-        }
+        $scope.data.dateOfBirth= "";
 
 
         $scope.edit = function(data){
@@ -21,9 +19,9 @@ angular.module('BeerClient.controllers')
 
             // Envoi de la requête pour éditer les champs biography et dateOfBirth de l'user
             EditProfileService.editProfile(data.description, data.dateOfBirth, $rootScope.userConnected['@id']).then(function(response){
-
+                
                 // Et si les champs d'ancien, de nouveau et de confirmation de mot de passe sont renseignés, il appelle la requête associée
-                if(data.newPass!="" && data.confirm!="" && data.oldPass!=""){
+                if(data.newPass!=undefined && data.confirm!=undefined && data.oldPass!=undefined){
                     if(data.newPass==data.confirm){        
                         EditProfileService.updatePass(data.oldPass, data.newPass, $rootScope.userConnected['@id']).then(function(response){
                             data.oldPass="";
