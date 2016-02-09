@@ -1,10 +1,20 @@
 angular.module('BeerClient.controllers')
 
     .controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $rootScope, AuthService, LevelService) {
-    
+
+
+
     // Gestion des redirections selon le clic sur l'item du menu
     if($rootScope.isAuth==false || $rootScope.isAuth==null){
         $state.go('login');
+    }
+    
+    $scope.getUserName=function(){
+        return $rootScope.userConnected.username;
+    }
+    
+    $scope.getLevel=function(){
+        return LevelService.getLevel($rootScope.userConnected.validScore);
     }
 
     $scope.goToHunt=function(){
@@ -38,6 +48,7 @@ angular.module('BeerClient.controllers')
 
     $scope.logout = function() {
         AuthService.logoutUser;
+        $state.reload();
         $state.go('login');
     }
 })

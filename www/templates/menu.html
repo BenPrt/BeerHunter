@@ -10,11 +10,11 @@
         <ion-nav-view id="menuContent" name="menuContent"></ion-nav-view>
     </ion-side-menu-content>
 
-    <ion-side-menu side="left" ng-controller="MenuCtrl">
+    <ion-side-menu side="left">
         <ion-header-bar class="bar-hunter2">
             <h1 id="sideMenuTitle" class="title">
-                <span id="menu-user-icon" class="glyphicon glyphicon-user" ></span>{{user.username}} 
-                <span id="menu-level-icon" class="glyphicon glyphicon-star-empty"> </span>{{level}}</h1>
+                <span id="menu-user-icon" class="glyphicon glyphicon-user" ></span>{{getUserName()}} 
+                <span id="menu-level-icon" class="glyphicon glyphicon-star-empty"> </span>{{getLevel()}}</h1>
         </ion-header-bar>
         <ion-content class="sideMenuContent">
             <ion-list class="sideMenuList">
