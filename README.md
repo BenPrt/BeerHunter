@@ -47,6 +47,9 @@ Note : pour un rendu optimal, utilisez l'émulateur de terminal mobile chrome et
 
 ### Construire et exécuter l'application sur plate-forme mobile
 
+
+##### Android
+
 Pour construire BeerHunter sur un téléphone Android, il vous faut d'abord ajouter la plate-forme au projet grâce à cette commande :
 
 ```shell
@@ -60,6 +63,18 @@ ionic run android
 ```
 
 L'application s'installe s'exécute sur le téléphone, et un apk signé (selon les informations de config.xml) est généré à 'platform/android/builds/output/apk/android-debug.apk'.
+
+##### iOS
+
+Pré-requis : un Mac doté de xCode et d'une licence développeur
+
+Pour tester BeerHunter sur iOs, tapez ces commandes :
+
+```shell
+ionic build ios
+ionic emulate ios
+```
+
 
 
 Pour tout renseignement supplémentaire, rendez-vous sur http://beerhunterdev.blogspot.fr ou contactez-nous via Github
