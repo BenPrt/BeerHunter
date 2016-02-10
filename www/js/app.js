@@ -46,7 +46,7 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
         controller: 'AppCtrl',
         resolve : {
             "checkSession": function($state, $rootScope, AuthService){
-                if($rootScope.isAuth==false || $rootScope.isAuth==null){
+                if($rootScope.isAuth==false || $rootScope.isAuth==null || $rootScope.userConnected==undefined){
                     $state.go('login');
                 }
             }
@@ -63,7 +63,7 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
             },
             resolve : {
                 "checkSession": function($state, $rootScope, AuthService){
-                    if($rootScope.isAuth==false || $rootScope.isAuth==null){
+                    if($rootScope.isAuth==false || $rootScope.isAuth==null || $rootScope.userConnected==undefined){
                         $state.go('login');
                     }
                 }
@@ -81,7 +81,7 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
             },
             resolve : {
                 "checkSession": function($state, $rootScope, AuthService){
-                    if($rootScope.isAuth==false || $rootScope.isAuth==null){
+                    if($rootScope.isAuth==false || $rootScope.isAuth==null || $rootScope.userConnected==undefined){
                         $state.go('login');
                     }
                 }
@@ -99,7 +99,7 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
             },
             resolve : {
                 "checkSession": function($state, $rootScope, AuthService){
-                    if($rootScope.isAuth==false || $rootScope.isAuth==null){
+                    if($rootScope.isAuth==false || $rootScope.isAuth==null || $rootScope.userConnected==undefined){
                         $state.go('login');
                     }
                 }
@@ -117,7 +117,7 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
             },
             resolve : {
                 "checkSession": function($state, $rootScope, AuthService){
-                    if($rootScope.isAuth==false || $rootScope.isAuth==null){
+                    if($rootScope.isAuth==false || $rootScope.isAuth==null || $rootScope.userConnected==undefined){
                         $state.go('login');
                     }
                 }
@@ -135,7 +135,7 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
             },
             resolve : {
                 "checkSession": function($state, $rootScope, AuthService){
-                    if($rootScope.isAuth==false || $rootScope.isAuth==null){
+                    if($rootScope.isAuth==false || $rootScope.isAuth==null || $rootScope.userConnected==undefined){
                         $state.go('login');
                     }
                 }
@@ -153,7 +153,7 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
             },
             resolve : {
                 "checkSession": function($state, $rootScope, AuthService){
-                    if($rootScope.isAuth==false || $rootScope.isAuth==null){
+                    if($rootScope.isAuth==false || $rootScope.isAuth==null || $rootScope.userConnected==undefined){
                         $state.go('login');
                     }
                 }
@@ -170,8 +170,8 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
                 controller: 'HuntListCtrl'
             },
             resolve : {
-                "checkSession": function($state, $rootScope, AuthService){
-                    if($rootScope.isAuth==false || $rootScope.isAuth==null){
+                "checkSession": function($state, $rootScope, AuthService ){
+                    if($rootScope.isAuth==false || $rootScope.isAuth==null || $rootScope.userConnected==undefined){
                         $state.go('login');
                     }
                 }
@@ -209,7 +209,7 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
             },
             resolve : {
                 "checkSession": function($state, $rootScope, AuthService){
-                    if($rootScope.isAuth==false || $rootScope.isAuth==null){
+                    if($rootScope.isAuth==false || $rootScope.isAuth==null || $rootScope.userConnected==undefined){
                         $state.go('login');
                     }
                 }
@@ -227,7 +227,7 @@ angular.module('BeerClient', ['ionic', 'BeerClient.controllers', 'BeerClient.ser
             },
             resolve : {
                 "checkSession": function($state, $rootScope, AuthService){
-                    if($rootScope.isAuth==false || $rootScope.isAuth==null){
+                    if($rootScope.isAuth==false || $rootScope.isAuth==null || $rootScope.userConnected==undefined){
                         $state.go('login');
                     }
                 }
