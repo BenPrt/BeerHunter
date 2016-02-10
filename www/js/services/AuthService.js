@@ -16,10 +16,6 @@ angular.module('BeerClient.services', [])
                 return "logged";
 
             }, function errorCallback(response) {
-                var alertPopup = $ionicPopup.alert({
-                    title: 'Erreur',
-                    template: 'Vos informations sont erronées, ou le serveur ne répond pas. Si cette erreur perdure, veuillez contacter un administrateur.'
-                });
             });
         },
 

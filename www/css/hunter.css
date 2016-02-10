@@ -22,12 +22,19 @@
     margin-right : 20%;
 }
 #hunter-name-label{
-    font-size : 26px;
+    margin-top : 3%;
+    position : absolute;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width : 70%;
+    font-size : 22px;
 }
 #hunter-score-label{
+    margin-top : 47%;
     font-size : 18px;
 }
 #hunter-level-label{
+    margin-top : -2%;
     font-size : 18px;
 }
 #hunter-hunts-label{

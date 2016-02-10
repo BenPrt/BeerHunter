@@ -37,6 +37,7 @@ angular.module('BeerClient.controllers')
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Initialisation des données pour le filtrage   
         $scope.beerSelected="";
+        $scope.beerTyped="";
         $scope.beerId="";
         $scope.colorSelected="";
         $scope.colorId="";
@@ -69,7 +70,7 @@ angular.module('BeerClient.controllers')
         //         Fonction chargée de gérer le contenu de l'autocomplete en fonction de ce que l'utilsiateur tape
         $scope.updateListBeer = function(beerTyped){
             $scope.displayedBeers = $scope.beers.filter( function(beer) {
-                if(beer.toLowerCase().indexOf(beerTyped.toLowerCase()) !== -1 ) return true;
+                if(beer.name.toLowerCase().indexOf(beerTyped.toLowerCase()) !== -1 ) return true;
             })
         }
         //         Fonction chargée de récupérer la bière sélectionnée par l'user dans l'autocomplete
